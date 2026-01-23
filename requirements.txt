@@ -1,5 +1,12 @@
-# Reference shared Sphinx extensions
--r ../cleanroom-technical-docs/shared/extensions.txt
+# Sphinx and extensions for AirGap Deploy documentation  
+# Mirrors shared extensions from cleanroom-technical-docs/shared/extensions.txt
+
+sphinx>=7.0.0,<8.0.0
+sphinx-rtd-theme>=3.0.0
+sphinx-needs>=6.3.0
+myst-parser>=3.0.0
+graphviz>=0.20.0
+sphinxcontrib-rust>=1.0.0
 
 # Project-specific dependencies (if any)
 # Add additional packages here as needed
