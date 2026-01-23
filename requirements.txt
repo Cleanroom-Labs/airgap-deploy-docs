@@ -1,0 +1,5 @@
+# Reference shared Sphinx extensions
+-r ../cleanroom-technical-docs/shared/extensions.txt
+
+# Project-specific dependencies (if any)
+# Add additional packages here as needed
