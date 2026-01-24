@@ -3,8 +3,8 @@
 import sys
 import os
 
-# Add shared theme configuration to path
-sys.path.insert(0, os.path.abspath('../../shared'))
+# Add sphinx-theme submodule to path (local to this repo)
+sys.path.insert(0, os.path.abspath('sphinx-theme'))
 
 # Import all shared settings
 from theme_config import *

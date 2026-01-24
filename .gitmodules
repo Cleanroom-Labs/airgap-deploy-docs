@@ -1,0 +1,3 @@
+[submodule "source/sphinx-theme"]
+	path = source/sphinx-theme
+	url = /home/user/Projects/sphinx-theme
