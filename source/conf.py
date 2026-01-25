@@ -3,8 +3,8 @@
 import sys
 import os
 
-# Add sphinx-theme submodule to path (local to this repo)
-sys.path.insert(0, os.path.abspath('sphinx-theme'))
+# Add cleanroom-design-system submodule to path (local to this repo)
+sys.path.insert(0, os.path.abspath('cleanroom-design-system'))
 
 # Import all shared settings
 from theme_config import *
