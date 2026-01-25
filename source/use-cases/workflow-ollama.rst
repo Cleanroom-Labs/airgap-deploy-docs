@@ -374,5 +374,5 @@ Related Documents
 
 - :doc:`airgap-deploy Overview <overview>` - General deployment workflow and gap analysis
 - :doc:`airgap-transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
-- :doc:`AirGap Whisper Workflow <workflow-airgap-whisper>` - Similar deployment workflow
+- :doc:`Cleanroom Whisper Workflow <workflow-airgap-whisper>` - Similar deployment workflow
 - :doc:`Principles </meta/principles>` - Design principles for all AirGap tools

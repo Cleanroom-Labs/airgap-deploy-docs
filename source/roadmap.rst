@@ -10,7 +10,7 @@ Build a deployment tool that makes air-gap packaging simple. Ship it. See what h
 v1.0.0 Release
 --------------
 
-**Release Goal:** This project will reach v1.0.0 as part of a coordinated release with AirGap Whisper and AirGap Transfer.
+**Release Goal:** This project will reach v1.0.0 as part of a coordinated release with Cleanroom Whisper and AirGap Transfer.
 
 **v1.0.0 Scope:** The MVP features documented in this roadmap.
 
@@ -31,7 +31,7 @@ Current Status
 
 All requirements, design, and test specifications are complete. Ready to start Phase 1.
 
-**MVP Goal:** Implement MVP that can package AirGap Whisper for air-gapped systems.
+**MVP Goal:** Implement MVP that can package Cleanroom Whisper for air-gapped systems.
 
 --------------
 
@@ -297,7 +297,7 @@ Definition of Done
 
 MVP is complete when:
 
-☐ Successfully packages AirGap Whisper for all platforms
+☐ Successfully packages Cleanroom Whisper for all platforms
 ☐ Generated install scripts work on air-gapped VMs
 ☐ Package creation completes efficiently for typical applications
 ☐ 80%+ code coverage
@@ -372,7 +372,7 @@ See Also
 
 - :doc:`Meta-Architecture </meta/meta-architecture>` - How airgap-deploy fits in the AirGap suite
 - :doc:`Requirements Overview </meta/requirements-overview>` - Project statistics and requirements overview
-- :doc:`AirGap Whisper </airgap-whisper/readme>` - Primary use case
+- :doc:`Cleanroom Whisper </airgap-whisper/readme>` - Primary use case
 - :doc:`AirGap Transfer </airgap-transfer/readme>` - Large file transfer companion tool
 
 --------------

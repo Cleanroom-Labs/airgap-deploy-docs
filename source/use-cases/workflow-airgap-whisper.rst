@@ -1,7 +1,7 @@
-Workflow: AirGap Whisper Deployment
-====================================
+Workflow: Cleanroom Whisper Deployment
+=======================================
 
-This document describes the complete end-to-end workflow for packaging and deploying AirGap Whisper using AirGap Deploy.
+This document describes the complete end-to-end workflow for packaging and deploying Cleanroom Whisper using AirGap Deploy.
 
 Overview
 --------
@@ -11,12 +11,12 @@ The workflow has two sides:
 **Developer Side** (Connected System) - Creating release packages
 **User Side** (Air-Gapped System) - Installing from package
 
-.. usecase:: AirGap Whisper Deployment Workflow
+.. usecase:: Cleanroom Whisper Deployment Workflow
    :id: UC-DEPLOY-001
    :status: approved
    :tags: deploy, workflow, airgap-whisper
 
-   Complete end-to-end workflow for packaging AirGap Whisper with airgap-deploy and deploying to air-gapped systems.
+   Complete end-to-end workflow for packaging Cleanroom Whisper with airgap-deploy and deploying to air-gapped systems.
 
    **Developer Side:** Create multi-platform release packages using GitHub Actions, vendor all dependencies, include Rust toolchain and whisper.cpp source.
 
@@ -79,11 +79,11 @@ Step 1: Prepare AirGapDeploy.toml
    install_to = "user"
    mode = "interactive"
 
-   # Simple configuration: AirGap Whisper auto-discovers binary and models
+   # Simple configuration: Cleanroom Whisper auto-discovers binary and models
    [install.config]
    config_file = "~/.config/airgap-whisper/config.toml"
    config_template = """
-   # AirGap Whisper auto-discovers whisper binary and all models from this path
+   # Cleanroom Whisper auto-discovers whisper binary and all models from this path
    whisper_path = "{{ install_prefix }}"
 
    [audio]
@@ -332,7 +332,7 @@ The install script will:
 
    ::
 
-      === AirGap Whisper Installation ===
+      === Cleanroom Whisper Installation ===
 
       Checking dependencies...
         ✓ Rust toolchain: Not found, will install
@@ -347,7 +347,7 @@ The install script will:
 
    ::
 
-      Where should AirGap Whisper be installed?
+      Where should Cleanroom Whisper be installed?
       [Default: ~/.local]:
 
    Press Enter for default, or specify custom path like ``/opt/airgap-whisper``
@@ -368,13 +368,13 @@ The install script will:
       gcc -O3 -std=c11 ...
       ✓ whisper.cpp built successfully
 
-**Build AirGap Whisper:**
+**Build Cleanroom Whisper:**
 
    ::
 
-      Building AirGap Whisper (offline mode)...
+      Building Cleanroom Whisper (offline mode)...
       Compiling airgap-whisper v0.1.0
-      ✓ AirGap Whisper built successfully
+      ✓ Cleanroom Whisper built successfully
 
 **Install files:**
 
@@ -394,7 +394,7 @@ The install script will:
 
       === Installation Summary ===
 
-      AirGap Whisper has been installed to: ~/.local/bin
+      Cleanroom Whisper has been installed to: ~/.local/bin
 
       Configuration file: ~/.config/airgap-whisper/config.toml
       Model directory: ~/.local/share/airgap-whisper/models
@@ -413,14 +413,14 @@ Step 7: First Run
    export PATH="$HOME/.local/bin:$PATH"
    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 
-   # Run AirGap Whisper
+   # Run Cleanroom Whisper
    airgap-whisper
 
 **First-run experience:**
 
 ::
 
-   === AirGap Whisper - First Run Setup ===
+   === Cleanroom Whisper - First Run Setup ===
 
    Configuration file: ~/.config/airgap-whisper/config.toml
 
@@ -431,7 +431,7 @@ Step 7: First Run
        - base.en (140 MB) ✓
        - small.en (460 MB) ✓
 
-   Settings look good! Starting AirGap Whisper...
+   Settings look good! Starting Cleanroom Whisper...
 
    Tray icon should now appear in your system tray.
 
@@ -454,7 +454,7 @@ For automated deployments (enterprise, CI/CD, etc.):
    MODE=automatic INSTALL_PREFIX=/opt/airgap-whisper ./install.sh
 
    # Windows
-   $env:MODE="automatic"; $env:INSTALL_PREFIX="C:\Program Files\AirGap Whisper"; .\install.ps1
+   $env:MODE="automatic"; $env:INSTALL_PREFIX="C:\Program Files\Cleanroom Whisper"; .\install.ps1
 
 Non-interactive mode:
 
@@ -556,7 +556,7 @@ Windows x86_64 All              ~400 MB         ~1.0 GB
 
 **Note:** Sizes include:
 
-- AirGap Whisper source + vendored Rust dependencies (~100 MB)
+- Cleanroom Whisper source + vendored Rust dependencies (~100 MB)
 - Rust toolchain installer (~150 MB compressed, ~500 MB extracted)
 - whisper.cpp source (~10 MB)
 - base.en model (~140 MB)
@@ -566,7 +566,7 @@ Windows x86_64 All              ~400 MB         ~1.0 GB
 Version Update Workflow
 -----------------------
 
-When a new version of AirGap Whisper is released:
+When a new version of Cleanroom Whisper is released:
 
 Developer Side
 ~~~~~~~~~~~~~~
@@ -618,4 +618,4 @@ This workflow enables:
 The complete process from "create release" to "user running application" takes approximately:
 
 - Developer: 5-10 minutes (mostly automated via CI/CD)
-- User: 10-20 minutes (mostly building whisper.cpp and AirGap Whisper)
+- User: 10-20 minutes (mostly building whisper.cpp and Cleanroom Whisper)

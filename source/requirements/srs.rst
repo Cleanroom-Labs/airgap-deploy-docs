@@ -113,7 +113,7 @@ airgap-deploy is a **standalone developer tool** that integrates into existing s
 **Relationship to Other Systems:**
 
 - **airgap-transfer:** Optional integration for large packages (see :doc:`meta-architecture </meta/meta-architecture>`)
-- **AirGap Whisper:** Reference implementation and primary use case
+- **Cleanroom Whisper:** Reference implementation and primary use case
 - **CI/CD pipelines:** Integrates with GitHub Actions, GitLab CI for automated package generation
 
 Product Functions
