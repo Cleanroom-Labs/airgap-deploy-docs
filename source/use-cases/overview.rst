@@ -1,8 +1,8 @@
 Use Case Analysis
 =================
 
-Primary Use Case: AirGap Whisper Deployment
--------------------------------------------
+Primary Use Case: Cleanroom Whisper Deployment
+-----------------------------------------------
 
 Current Design Coverage
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +37,7 @@ Critical Gaps Identified
 Gap 1: Post-Installation Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Problem:** AirGap Whisper needs to know where whisper.cpp and models are installed.
+**Problem:** Cleanroom Whisper needs to know where whisper.cpp and models are installed.
 
 **Current Plan:** No mechanism for post-install configuration.
 
@@ -48,7 +48,7 @@ Gap 1: Post-Installation Configuration
    [install.config]
    config_file = "~/.config/airgap-whisper/config.toml"
    config_template = """
-   # AirGap Whisper auto-discovers binary and models from this path
+   # Cleanroom Whisper auto-discovers binary and models from this path
    whisper_path = "{{ install_prefix }}"
    """
 
@@ -57,9 +57,9 @@ Gap 1: Post-Installation Configuration
 Build and install whisper.cpp to known location
 Copy all models to known location (``{{ install_prefix }}/share/airgap-whisper/models/``)
 Generate config file with install prefix
-Install AirGap Whisper binary
+Install Cleanroom Whisper binary
 
-**AirGap Whisper runtime auto-discovery:**
+**Cleanroom Whisper runtime auto-discovery:**
 
 - Binary: Search ``whisper_path/bin/`` for ``whisper-main``, ``main``, ``whisper-cli``, etc.
 - Models: Scan ``whisper_path/share/airgap-whisper/models/*.bin``
@@ -177,7 +177,7 @@ Use Case Matrix
 Use Case 1: Developer Creating Release (Primary)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Actor:** AirGap Whisper maintainer **Environment:** macOS laptop with internet **Goal:** Create release packages for Linux, macOS, Windows
+**Actor:** Cleanroom Whisper maintainer **Environment:** macOS laptop with internet **Goal:** Create release packages for Linux, macOS, Windows
 
 **Workflow:**
 
@@ -199,7 +199,7 @@ Users download pre-built packages
 Use Case 2: End User Installing on Air-Gapped System (Primary)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Actor:** Security researcher on air-gapped workstation **Environment:** Ubuntu 22.04 with no internet, ALSA installed **Goal:** Install and run AirGap Whisper
+**Actor:** Security researcher on air-gapped workstation **Environment:** Ubuntu 22.04 with no internet, ALSA installed **Goal:** Install and run Cleanroom Whisper
 
 **Workflow:**
 
@@ -224,7 +224,7 @@ Run: ``airgap-whisper``
 Use Case 3: Advanced User Custom Build (Secondary)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Actor:** Developer customizing AirGap Whisper **Environment:** Arch Linux with internet **Goal:** Create custom package with specific models
+**Actor:** Developer customizing Cleanroom Whisper **Environment:** Arch Linux with internet **Goal:** Create custom package with specific models
 
 **Workflow:**
 
@@ -277,7 +277,7 @@ Recommendation 1: Add Post-Install Configuration with Auto-Discovery
    [install.config]
    config_file = "~/.config/airgap-whisper/config.toml"
    config_template = """
-   # AirGap Whisper auto-discovers binary and models from this path
+   # Cleanroom Whisper auto-discovers binary and models from this path
    whisper_path = "{{ install_prefix }}"
 
    [audio]
@@ -303,7 +303,7 @@ Recommendation 1: Add Post-Install Configuration with Auto-Discovery
        "cp target/release/airgap-whisper {{ install_prefix }}/bin/"
    ]
 
-**AirGap Whisper Auto-Discovery:**
+**Cleanroom Whisper Auto-Discovery:**
 
 - Discovers whisper binary by searching ``whisper_path/bin/`` for known names
 - Discovers all models by scanning ``whisper_path/share/airgap-whisper/models/*.bin``
@@ -365,7 +365,7 @@ Recommendation 3: Installation Modes
 
    # Interactive prompts
    [install.prompts]
-   install_location = "Where should AirGap Whisper be installed?"
+   install_location = "Where should Cleanroom Whisper be installed?"
    install_location_default = "~/.local"
    install_system_wide = "Install system-wide (requires sudo)?"
    install_system_wide_default = false
@@ -381,7 +381,7 @@ Recommendation 3: Installation Modes
    MODE="${MODE:-interactive}"
 
    if [ "$MODE" = "interactive" ]; then
-       read -p "Where should AirGap Whisper be installed? [~/.local]: " INSTALL_PREFIX
+       read -p "Where should Cleanroom Whisper be installed? [~/.local]: " INSTALL_PREFIX
        INSTALL_PREFIX="${INSTALL_PREFIX:-$HOME/.local}"
    else
        INSTALL_PREFIX="${INSTALL_PREFIX:-$HOME/.local}"
@@ -404,7 +404,7 @@ Recommendation 4: Dependency Verification
    #!/bin/bash
    set -e
 
-   echo "=== AirGap Whisper Installation ==="
+   echo "=== Cleanroom Whisper Installation ==="
    echo
 
    # Check for required tools
@@ -479,12 +479,12 @@ Recommended MVP (v0.1.0)
 - ❌ Phase 7: Plugin system (skip)
 - ❌ SystemPackageComponent (defer to v0.2)
 
-**Rationale:** Post-install configuration and dependency checking are critical for the AirGap Whisper use case to work smoothly.
+**Rationale:** Post-install configuration and dependency checking are critical for the Cleanroom Whisper use case to work smoothly.
 
 --------------
 
-Example: Complete AirGap Whisper Manifest
------------------------------------------
+Example: Complete Cleanroom Whisper Manifest
+--------------------------------------------
 
 .. code:: toml
 
@@ -548,11 +548,11 @@ Example: Complete AirGap Whisper Manifest
    mode = "interactive"
 
    # Post-install configuration
-   # AirGap Whisper will automatically discover models and binary from whisper_path
+   # Cleanroom Whisper will automatically discover models and binary from whisper_path
    [install.config]
    config_file = "~/.config/airgap-whisper/config.toml"
    config_template = """
-   # AirGap Whisper looks for whisper.cpp installation here
+   # Cleanroom Whisper looks for whisper.cpp installation here
    # The tool will automatically discover:
    #   - Binary: <whisper_path>/bin/whisper-main (or main, whisper-cli)
    #   - Models: <whisper_path>/share/airgap-whisper/models/*.bin
@@ -602,14 +602,14 @@ Example: Complete AirGap Whisper Manifest
    [install.dependencies.linux]
    alsa = { required = true, install_if_missing = true, packages = ["libasound2-dev"] }
 
-AirGap Whisper Runtime Behavior
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cleanroom Whisper Runtime Behavior
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With this simpler configuration, AirGap Whisper’s runtime logic:
+With this simpler configuration, Cleanroom Whisper’s runtime logic:
 
 .. code:: rust
 
-   // src/whisper.rs - AirGap Whisper code
+   // src/whisper.rs - Cleanroom Whisper code
 
    pub struct WhisperConfig {
        pub whisper_path: PathBuf,
@@ -684,8 +684,8 @@ With this simpler configuration, AirGap Whisper’s runtime logic:
 Summary
 -------
 
-Does Current Plan Support AirGap Whisper?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Does Current Plan Support Cleanroom Whisper?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Yes, but with critical gaps:**
 
@@ -711,7 +711,7 @@ Recommended Actions
 
 **Immediate (Phase 1-2):** Add optional component support to manifest schema
 **Phase 4 Enhancement:** Implement config generation, dependency checks, installation modes
-**Documentation:** Create complete AirGap Whisper example in ``examples/airgap-whisper/``
+**Documentation:** Create complete Cleanroom Whisper example in ``examples/airgap-whisper/``
 **Testing:** Validate on actual air-gapped VMs before v0.1.0 release
 
-The foundation is solid, but these enhancements are needed for a smooth AirGap Whisper deployment experience.
+The foundation is solid, but these enhancements are needed for a smooth Cleanroom Whisper deployment experience.

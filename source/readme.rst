@@ -421,7 +421,7 @@ airgap-deploy is designed for:
 - **Security-conscious organizations** requiring offline installation
 - **Developers** creating reproducible deployment packages
 
-**Primary use case:** Package AirGap Whisper and similar applications for air-gapped systems.
+**Primary use case:** Package Cleanroom Whisper and similar applications for air-gapped systems.
 
 Privacy
 -------
@@ -468,7 +468,7 @@ AirGap Deploy fills the gap for **lightweight, general-purpose application packa
 - ✅ **Dependency verification**: SHA-256 checksums for all components
 - ✅ **Automated builds**: Installation scripts handle building from source offline
 
-**Unique value proposition:** The only tool designed specifically for packaging Rust applications with ML models (like AirGap Whisper + whisper.cpp + model files) for air-gapped desktop deployment.
+**Unique value proposition:** The only tool designed specifically for packaging Rust applications with ML models (like Cleanroom Whisper + whisper.cpp + model files) for air-gapped desktop deployment.
 
 **Complementary to Zarf:** Use Zarf for Kubernetes workloads, AirGap Deploy for desktop applications. Both solve air-gap deployment, different targets.
 

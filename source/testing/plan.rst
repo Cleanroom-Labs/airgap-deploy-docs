@@ -64,7 +64,7 @@ Test Levels
 
 - Verify requirements satisfaction
 - User workflow testing
-- Reference implementation (AirGap Whisper deployment)
+- Reference implementation (Cleanroom Whisper deployment)
 
 Test Types
 ~~~~~~~~~~
@@ -520,14 +520,14 @@ Error Handling (FR-7.1 to FR-7.4)
 End-to-End Workflows
 ~~~~~~~~~~~~~~~~~~~~
 
-.. test:: AirGap Whisper End-to-End Deployment
+.. test:: Cleanroom Whisper End-to-End Deployment
    :id: TC-E2E-001
    :status: approved
    :tags: deploy, e2e, airgap-whisper, system
    :tests: UC-DEPLOY-001
    :priority: critical
 
-   Verify complete AirGap Whisper deployment workflow from package creation to functional installation on air-gapped system
+   Verify complete Cleanroom Whisper deployment workflow from package creation to functional installation on air-gapped system
 
 .. test:: Ollama Large Model Deployment
    :id: TC-E2E-002
