@@ -1,3 +1,3 @@
-[submodule "source/sphinx-theme"]
-	path = source/sphinx-theme
-	url = /Users/andfranklin/Projects/sphinx-theme
+[submodule "source/cleanroom-design-system"]
+	path = source/cleanroom-design-system
+	url = /Users/andfranklin/Projects/cleanroom-design-system
