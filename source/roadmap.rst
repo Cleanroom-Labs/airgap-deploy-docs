@@ -1,6 +1,8 @@
 Project Roadmap
 ===============
 
+|status-active|
+
 Build a deployment tool that makes air-gap packaging simple. Ship it. See what happens.
 
 **Guiding document:** :doc:`Principles </meta/principles>`
