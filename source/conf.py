@@ -83,6 +83,7 @@ needs_extra_links = [
     },
 ]
 
+needs_build_json = True
 needs_build_needflow = True
 needs_flow_show_links = True
 needs_flow_link_types = ['links', 'tests', 'implements']
