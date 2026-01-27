@@ -408,7 +408,7 @@ Meta-Architecture
 +=================================================================+====================================================+
 | :doc:`Meta-Architecture </meta/meta-architecture>`              | How airgap-deploy relates to other AirGap projects |
 +-----------------------------------------------------------------+----------------------------------------------------+
-| `Traceability Dashboard <../meta/traceability-dashboard.rst>`__ | Project statistics and traceability overview       |
+| `Specification Overview <../meta/specification-overview.rst>`__ | Project statistics and traceability overview       |
 +-----------------------------------------------------------------+----------------------------------------------------+
 
 Use Cases
