@@ -111,3 +111,4 @@ html_context = {
     'github_version': 'main',
     'conf_py_path': '/source/',
 }
+setup_project_icon(project, html_context)
