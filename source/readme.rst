@@ -17,17 +17,29 @@ How It Works
 
 Deploy any application to air-gapped systems in two phases:
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Phase 1 - Preparation (Connected System):**
 
 Create ``AirGapDeploy.toml`` manifest defining your application
 Run ``airgap-deploy prep`` to download and package everything
 Transfer package via USB or other physical media
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Phase 2 - Installation (Air-Gapped System):**
 
 Extract package on air-gapped system
 Run generated ``install.sh`` (or ``install.ps1`` on Windows)
 Installation script builds and installs everything offline
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 No network required on the air-gapped system.
 
@@ -37,7 +49,7 @@ Quick Start
 Prerequisites
 ~~~~~~~~~~~~~
 
-- Rust toolchain (for building airgap-deploy)
+- Rust toolchain (for building AirGap Deploy)
 - Internet access (for preparation phase)
 - Git (for cloning external repositories)
 
@@ -312,10 +324,10 @@ Example 2: Large ML Application
    method = "build-from-source"
    install_to = "user"
 
-Integration with airgap-transfer
---------------------------------
+Integration with AirGap Transfer
+---------------------------------
 
-For large packages that exceed USB capacity, use airgap-transfer:
+For large packages that exceed USB capacity, use AirGap Transfer:
 
 .. code:: bash
 
@@ -335,7 +347,7 @@ For large packages that exceed USB capacity, use airgap-transfer:
    cd ~/deployment/ollama-deploy
    ./install.sh
 
-See :doc:`airgap-transfer documentation </airgap-transfer/readme>` for details.
+See :doc:`AirGap Transfer documentation </airgap-transfer/readme>` for details.
 
 Platform Support
 ----------------
@@ -406,7 +418,7 @@ Meta-Architecture
 +-----------------------------------------------------------------+----------------------------------------------------+
 | Document                                                        | Purpose                                            |
 +=================================================================+====================================================+
-| :doc:`Meta-Architecture </meta/meta-architecture>`              | How airgap-deploy relates to other AirGap projects |
+| :doc:`Meta-Architecture </meta/meta-architecture>`              | How AirGap Deploy relates to other AirGap projects |
 +-----------------------------------------------------------------+----------------------------------------------------+
 | `Specification Overview <../meta/specification-overview.rst>`__ | Project statistics and traceability overview       |
 +-----------------------------------------------------------------+----------------------------------------------------+
@@ -414,7 +426,7 @@ Meta-Architecture
 Use Cases
 ---------
 
-airgap-deploy is designed for:
+AirGap Deploy is designed for:
 
 - **Release engineers** packaging applications for air-gapped deployment
 - **DevOps teams** deploying to isolated environments
@@ -426,7 +438,7 @@ airgap-deploy is designed for:
 Privacy
 -------
 
-airgap-deploy operates in two distinct phases:
+AirGap Deploy operates in two distinct phases:
 
 - **Preparation phase (connected):** Downloads components, creates package
 - **Installation phase (air-gapped):** No network access required or attempted

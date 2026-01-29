@@ -9,6 +9,10 @@ Purpose
 
 This Software Design Document (SDD) describes the architectural and detailed design of **AirGap Deploy**, a command-line tool for packaging applications for air-gapped deployment.
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 This document is intended for:
 
 - Developers implementing AirGap Deploy
@@ -32,26 +36,13 @@ This document does NOT cover:
 - Implementation details (see source code)
 - User documentation (see README)
 
-Definitions and Acronyms
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :doc:`SRS <../requirements/srs>` (Section 1.3) for complete definitions.
-
-References
-~~~~~~~~~~
-
-- :doc:`Requirements (SRS) <../requirements/srs>`
-- :doc:`Roadmap <../roadmap>`
-- :doc:`Use Case Analysis <../use-cases/overview>`
-- IEEE 1016-2009: IEEE Standard for Information Technology—Systems Design—Software Design Descriptions
-
 System Architecture
 -------------------
 
 Architectural Style
 ~~~~~~~~~~~~~~~~~~~
 
-airgap-deploy follows a **pipeline architecture** with distinct stages:
+AirGap Deploy follows a **pipeline architecture** with distinct stages:
 
 ::
 
@@ -536,11 +527,6 @@ Install Script Template
 Interface Specifications
 -----------------------
 
-CLI Interface
-~~~~~~~~~~~~~
-
-See :doc:`SRS <../requirements/srs>` (Section 3.5) for detailed CLI specifications.
-
 Component Plugin Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -578,6 +564,10 @@ Why TOML for Manifests?
 
 **Decision:** Use TOML format for ``AirGapDeploy.toml``
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Alternatives Considered:**
 
 - YAML: Too flexible, whitespace-sensitive
@@ -595,6 +585,10 @@ Why Build from Source on Air-Gapped System?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Decision:** Build applications on air-gapped system rather than prebuilding
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 **Alternatives Considered:**
 
@@ -615,6 +609,10 @@ Why Component Trait Instead of Enums?
 
 **Decision:** Use trait-based design for components
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Alternatives Considered:**
 
 - Enum with variants for each component type
@@ -634,10 +632,14 @@ Why Generate Install Scripts Instead of Installing Directly?
 
 **Decision:** Generate standalone installation scripts
 
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Alternatives Considered:**
 
 - ``airgap-deploy install`` command that must run on air-gapped system
-- Require airgap-deploy binary on both sides
+- Require AirGap Deploy binary on both sides
 
 **Rationale:**
 
@@ -904,11 +906,6 @@ Platform Testing
 Future Enhancements
 -------------------
 
-Plugin System (v2.0)
-~~~~~~~~~~~~~~~~~~~~
-
-See :doc:`Roadmap <../roadmap>` (Phase 7)
-
 Pre-built Binaries (v0.2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -935,4 +932,8 @@ Sign packages for verification on air-gapped systems:
 
 **Requires:** GPG integration, key management
 
-**End of Software Design Document**
+Plugin System (v2.0)
+~~~~~~~~~~~~~~~~~~~~
+
+See :doc:`Roadmap <../roadmap>` (Phase 7)
+

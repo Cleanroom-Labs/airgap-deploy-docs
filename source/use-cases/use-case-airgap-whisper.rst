@@ -16,7 +16,7 @@ The workflow has two sides:
    :status: approved
    :tags: deploy, workflow, airgap-whisper
 
-   Complete end-to-end workflow for packaging Cleanroom Whisper with airgap-deploy and deploying to air-gapped systems.
+   Complete end-to-end workflow for packaging Cleanroom Whisper with AirGap Deploy and deploying to air-gapped systems.
 
    **Developer Side:** Create multi-platform release packages using GitHub Actions, vendor all dependencies, include Rust toolchain and whisper.cpp source.
 

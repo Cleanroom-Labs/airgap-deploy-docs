@@ -1,5 +1,5 @@
-AirGap Deploy API Reference
-============================
+API Reference
+=============
 
 .. note::
 
@@ -78,138 +78,19 @@ Installer Module (``installer``)
 - ``InstallStep`` - Installation step definitions
 - ``ConfigTemplate`` - Configuration file templates
 
-Integration with Sphinx
-------------------------
+Developer Resources
+-------------------
 
-Rust Doc Comment Guidelines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Write doc comments that reference requirements for traceability:
-
-.. code-block:: rust
-
-   /// Parses and validates AirGapDeploy.toml manifest files.
-   ///
-   /// The manifest defines all components to be bundled in the air-gap
-   /// deployment package, including Rust applications, external binaries,
-   /// models, and system packages.
-   ///
-   /// # Implements
-   ///
-   /// - [`FR-DEPLOY-001`]: Parse AirGapDeploy.toml
-   /// - [`FR-DEPLOY-002`]: Validate manifest structure
-   /// - [`FR-DEPLOY-003`]: Validate component definitions
-   ///
-   /// # Example
-   ///
-   /// ```no_run
-   /// use airgap_deploy::manifest::Manifest;
-   ///
-   /// let manifest = Manifest::from_file("AirGapDeploy.toml")?;
-   /// manifest.validate()?;
-   /// ```
-   pub struct Manifest {
-       pub package: PackageInfo,
-       pub components: Vec<Component>,
-   }
-
-Component Trait Example
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: rust
-
-   /// Trait for all component types in deployment packages.
-   ///
-   /// # Implements
-   ///
-   /// - [`FR-DEPLOY-004`]: Component type abstraction
-   ///
-   pub trait ComponentHandler {
-       /// Downloads or prepares the component.
-       ///
-       /// # Implements
-       ///
-       /// - [`FR-DEPLOY-005`]: Download component files
-       ///
-       fn prepare(&self, target: &TargetPlatform) -> Result<()>;
-
-       /// Generates installation steps for this component.
-       ///
-       /// # Implements
-       ///
-       /// - [`FR-DEPLOY-025`]: Generate installation steps
-       ///
-       fn install_steps(&self) -> Vec<InstallStep>;
-   }
-
-Using sphinxcontrib-rust
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Once code exists, integrate with Sphinx:
-
-**Generate Rust docs:**
-
-   .. code-block:: bash
-
-      cargo doc --no-deps --document-private-items
-
-**Configure sphinxcontrib-rust in conf.py:**
-
-   .. code-block:: python
-
-      extensions = [
-          # ... existing extensions
-          'sphinxcontrib.rust',
-      ]
-
-      rust_crates = {
-          'airgap-deploy': '../airgap-deploy',
-      }
-
-**Reference Rust items in RST:**
-
-   .. code-block:: rst
-
-      See :rust:struct:`Manifest` for manifest parsing.
-      See :rust:trait:`ComponentHandler` for component interface.
-
-**Build documentation:**
-
-   .. code-block:: bash
-
-      cd sphinx-docs
-      make html
-
-Traceability Linking
-~~~~~~~~~~~~~~~~~~~~
-
-Link implementations back to requirements:
-
-.. code-block:: rst
-
-   .. impl:: Manifest Parser Implementation
-      :id: IMPL-DEPLOY-001
-      :implements: FR-DEPLOY-001, FR-DEPLOY-002, FR-DEPLOY-003
-      :status: planned
-      :location: src/manifest/parser.rs
-
-      TOML parsing and validation for AirGapDeploy.toml manifests
+See `Rust API Documentation Integration Guide <../../meta/rust-integration-guide.html>`__ for doc comment guidelines, sphinxcontrib-rust configuration, and traceability linking.
 
 Future Enhancements
 -------------------
 
 When implementation begins:
 
-Add ``.. impl::`` directives for each module
-Link implementations to requirements in traceability matrix
-Auto-generate API docs with sphinxcontrib-rust
-Document component trait implementations
-Add workflow examples showing API usage
+- Add ``.. impl::`` directives for each module
+- Link implementations to requirements in traceability matrix
+- Auto-generate API docs with sphinxcontrib-rust
+- Document component trait implementations
+- Add workflow examples showing API usage
 
-See Also
---------
-
-- :doc:`../requirements/srs` - Requirements this API implements
-- :doc:`../design/sdd` - Detailed design specifications
-- :doc:`../testing/plan` - Test cases validating this API
-- :doc:`../use-cases/use-case-airgap-whisper` - Real-world usage example

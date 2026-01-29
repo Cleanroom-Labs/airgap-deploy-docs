@@ -40,13 +40,31 @@ Open-Source Maintainer
 Primary Use Cases
 -----------------
 
-+----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
-| Use Case                                                             | Actor                         | Workflow                                      |
-+======================================================================+===============================+===============================================+
-| :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>`        | Release engineer / developer  | Create manifest → prep → CI/CD → release      |
-+----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
-| :doc:`Ollama Deployment <use-case-ollama>`                           | IT administrator / developer  | Create manifest → prep → transfer → install   |
-+----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
+Cleanroom Whisper Deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Scenario:** Package Cleanroom Whisper (Rust app + whisper.cpp + ML models) for installation on air-gapped desktops.
+
+**Key Requirements:**
+
+- Declarative manifest defines all components
+- Cross-platform install scripts (Bash + PowerShell)
+- Checksum verification of all downloaded artifacts
+
+:doc:`Use Case: Cleanroom Whisper Deployment <use-case-airgap-whisper>`
+
+Ollama Deployment
+~~~~~~~~~~~~~~~~~~~~
+
+**Scenario:** Package Ollama with multiple large language models (20GB+) for deployment to an air-gapped server.
+
+**Key Requirements:**
+
+- Handle large model files with checksum verification
+- Integration with AirGap Transfer for multi-USB chunking
+- Unattended installation on target system
+
+:doc:`Use Case: Ollama Deployment <use-case-ollama>`
 
 Common Requirements Across All Use Cases
 -----------------------------------------
@@ -135,5 +153,6 @@ See Also
 - :doc:`Gap Analysis <gap-analysis>` - Detailed gap analysis for the Cleanroom Whisper deployment use case
 - :doc:`Requirements (SRS) <../requirements/srs>` - Detailed functional requirements
 - :doc:`Design (SDD) <../design/sdd>` - Architecture and implementation
+- :doc:`Test Plan <../testing/plan>` - Test cases and verification
 - :doc:`Roadmap <../roadmap>` - Implementation roadmap
 - :doc:`Principles </meta/principles>` - Design principles guiding all decisions
