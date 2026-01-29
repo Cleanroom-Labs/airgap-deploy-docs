@@ -296,7 +296,7 @@ Integration Points
 With AirGap Transfer
 ~~~~~~~~~~~~~~~~~~~~
 
-For large deployments (multiple models > USB capacity, see :doc:`AirGap Transfer workflows </airgap-transfer/use-cases/overview>`):
+For large deployments (multiple models > USB capacity, see `AirGap Transfer workflows <https://cleanroomlabs.dev/docs/airgap-transfer/use-cases/overview.html>`_):
 
 .. code:: bash
 
@@ -373,6 +373,6 @@ Related Documents
 -----------------
 
 - :doc:`AirGap Deploy Overview <overview>` - General deployment workflow and gap analysis
-- :doc:`AirGap Transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
+- `AirGap Transfer <https://cleanroomlabs.dev/docs/airgap-transfer/use-cases/overview.html>`_ - Large file transfer use cases
 - :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>` - Similar deployment use case
-- `Principles <https://cleanroomlabs.dev/docs/meta/principles/>`_ - Design principles for all AirGap tools
+- `Principles <https://cleanroomlabs.dev/docs/meta/principles.html>`_ - Design principles for all AirGap tools

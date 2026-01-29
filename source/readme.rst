@@ -347,7 +347,7 @@ For large packages that exceed USB capacity, use AirGap Transfer:
    cd ~/deployment/ollama-deploy
    ./install.sh
 
-See :doc:`AirGap Transfer documentation </airgap-transfer/readme>` for details.
+See `AirGap Transfer documentation <https://cleanroomlabs.dev/docs/airgap-transfer/readme.html>`_ for details.
 
 Platform Support
 ----------------
@@ -388,7 +388,7 @@ Start Here
 | :doc:`Roadmap <roadmap>`                    | Project status and direction        |
 +---------------------------------------------+-------------------------------------+
 
-.. _Principles: https://cleanroomlabs.dev/docs/meta/principles/
+.. _Principles: https://cleanroomlabs.dev/docs/meta/principles.html
 
 Technical Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -420,10 +420,13 @@ Meta-Architecture
 +-----------------------------------------------------------------+----------------------------------------------------+
 | Document                                                        | Purpose                                            |
 +=================================================================+====================================================+
-| :doc:`Meta-Architecture </meta/meta-architecture>`              | How AirGap Deploy relates to other AirGap projects |
+| Meta-Architecture_                                              | How AirGap Deploy relates to other AirGap projects |
 +-----------------------------------------------------------------+----------------------------------------------------+
-| `Specification Overview <../meta/specification-overview.rst>`__ | Project statistics and traceability overview       |
+| Specification Overview_                                         | Project statistics and traceability overview       |
 +-----------------------------------------------------------------+----------------------------------------------------+
+
+.. _Meta-Architecture: https://cleanroomlabs.dev/docs/meta/meta-architecture.html
+.. _Specification Overview: https://cleanroomlabs.dev/docs/meta/specification-overview.html
 
 Use Cases
 ---------

@@ -4,7 +4,7 @@ Build a deployment tool that makes air-gap packaging simple. Ship it. See what h
 
 <br>
 
-**Guiding document:** [Principles](https://cleanroomlabs.dev/docs/meta/principles/)
+**Guiding document:** [Principles](https://cleanroomlabs.dev/docs/meta/principles.html)
 
 ## v1.0.0 Release
 
@@ -14,7 +14,7 @@ Build a deployment tool that makes air-gap packaging simple. Ship it. See what h
 
 **Cross-Project Integration:** v1.0.0 validates the Ollama deployment workflow works end-to-end.
 
-**Release Coordination:** See [Release Roadmap](/meta/release-roadmap) for cross-project timeline and integration milestones.
+**Release Coordination:** See [Release Roadmap](https://cleanroomlabs.dev/docs/meta/release-roadmap.html) for cross-project timeline and integration milestones.
 
 <br>
 
@@ -336,17 +336,17 @@ Build it. Use it. Then improve it.
 
 | Document | Purpose |
 |----------|---------|
-| [Principles](https://cleanroomlabs.dev/docs/meta/principles/) | Design principles (read first) |
+| [Principles](https://cleanroomlabs.dev/docs/meta/principles.html) | Design principles (read first) |
 | [Requirements (SRS)](requirements/srs) | Functional and non-functional requirements |
 | [Design (SDD)](design/sdd) | Architecture and component design |
 | [Test Plan](testing/plan) | Test cases with traceability |
 
 ## See Also
 
-- [Meta-Architecture](/meta/meta-architecture) - How AirGap Deploy fits in the AirGap suite
-- [Specification Overview](/meta/specification-overview) - Project statistics and traceability overview
-- [Cleanroom Whisper](/cleanroom-whisper/readme) - Primary use case
-- [AirGap Transfer](/airgap-transfer/readme) - Large file transfer companion tool
+- [Meta-Architecture](https://cleanroomlabs.dev/docs/meta/meta-architecture.html) - How AirGap Deploy fits in the AirGap suite
+- [Specification Overview](https://cleanroomlabs.dev/docs/meta/specification-overview.html) - Project statistics and traceability overview
+- [Cleanroom Whisper](https://cleanroomlabs.dev/docs/cleanroom-whisper/readme.html) - Primary use case
+- [AirGap Transfer](https://cleanroomlabs.dev/docs/airgap-transfer/readme.html) - Large file transfer companion tool
 
 ## Progress Log
 

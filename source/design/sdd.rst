@@ -525,7 +525,7 @@ Install Script Template
    echo "Installed to: $INSTALL_PREFIX" | tee -a "$LOG_FILE"
 
 Interface Specifications
------------------------
+------------------------
 
 Component Plugin Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -651,7 +651,7 @@ Why Generate Install Scripts Instead of Installing Directly?
 **Trade-off:** Less control over installation process, script generation complexity
 
 Error Handling Strategy
-----------------------
+-----------------------
 
 Error Types
 ~~~~~~~~~~~
@@ -936,4 +936,3 @@ Plugin System (v2.0)
 ~~~~~~~~~~~~~~~~~~~~
 
 See :doc:`Roadmap <../roadmap>` (Phase 7)
-
