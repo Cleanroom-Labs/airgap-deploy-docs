@@ -9,7 +9,7 @@ AirGap Deploy API Reference
 Planned Architecture
 --------------------
 
-Based on :doc:`/airgap-deploy/design/sdd`, AirGap Deploy will consist of these modules:
+Based on :doc:`../design/sdd`, AirGap Deploy will consist of these modules:
 
 CLI Module (``cli``)
 ~~~~~~~~~~~~~~~~~~~~
@@ -22,8 +22,6 @@ CLI Module (``cli``)
 - ``Args`` - Argument parser using clap
 - ``TargetPlatform`` - Platform specification
 
-**Implements Requirements:** FR-DEPLOY-033, FR-DEPLOY-034, FR-DEPLOY-035
-
 Manifest Module (``manifest``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -35,8 +33,6 @@ Manifest Module (``manifest``)
 - ``Component`` - Component definitions
 - ``ManifestParser`` - TOML parsing and validation
 
-**Implements Requirements:** FR-DEPLOY-001, FR-DEPLOY-002, FR-DEPLOY-003
-
 Cargo Module (``cargo``)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -47,8 +43,6 @@ Cargo Module (``cargo``)
 - ``CargoWorkspace`` - Workspace metadata extraction
 - ``DependencyVendor`` - Vendor dependency download
 - ``ToolchainManager`` - Rust toolchain bundling
-
-**Implements Requirements:** FR-DEPLOY-007, FR-DEPLOY-008, FR-DEPLOY-009
 
 Component Module (``component``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,8 +56,6 @@ Component Module (``component``)
 - ``ModelFileComponent`` - Model file manager
 - ``SystemPackageComponent`` - System package bundler
 
-**Implements Requirements:** FR-DEPLOY-004, FR-DEPLOY-010, FR-DEPLOY-013, FR-DEPLOY-016
-
 Package Module (``package``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,8 +67,6 @@ Package Module (``package``)
 - ``TarBuilder`` - Tar archive creation
 - ``Compressor`` - Gzip compression
 
-**Implements Requirements:** FR-DEPLOY-019, FR-DEPLOY-020, FR-DEPLOY-021
-
 Installer Module (``installer``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -87,8 +77,6 @@ Installer Module (``installer``)
 - ``ScriptGenerator`` - Shell script generation
 - ``InstallStep`` - Installation step definitions
 - ``ConfigTemplate`` - Configuration file templates
-
-**Implements Requirements:** FR-DEPLOY-025, FR-DEPLOY-026, FR-DEPLOY-027
 
 Integration with Sphinx
 ------------------------
@@ -221,7 +209,7 @@ Add workflow examples showing API usage
 See Also
 --------
 
-- :doc:`/airgap-deploy/requirements/srs` - Requirements this API implements
-- :doc:`/airgap-deploy/design/sdd` - Detailed design specifications
-- :doc:`/airgap-deploy/testing/plan` - Test cases validating this API
-- :doc:`/airgap-deploy/use-cases/use-case-airgap-whisper` - Real-world usage example
+- :doc:`../requirements/srs` - Requirements this API implements
+- :doc:`../design/sdd` - Detailed design specifications
+- :doc:`../testing/plan` - Test cases validating this API
+- :doc:`../use-cases/use-case-airgap-whisper` - Real-world usage example
