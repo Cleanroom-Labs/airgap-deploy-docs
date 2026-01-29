@@ -375,4 +375,4 @@ Related Documents
 - :doc:`AirGap Deploy Overview <overview>` - General deployment workflow and gap analysis
 - :doc:`AirGap Transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
 - :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>` - Similar deployment use case
-- :doc:`Principles </meta/principles>` - Design principles for all AirGap tools
+- `Principles <https://cleanroomlabs.dev/docs/meta/principles/>`_ - Design principles for all AirGap tools

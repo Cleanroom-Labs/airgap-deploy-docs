@@ -4,7 +4,7 @@ Build a deployment tool that makes air-gap packaging simple. Ship it. See what h
 
 <br>
 
-**Guiding document:** [Principles](/meta/principles)
+**Guiding document:** [Principles](https://cleanroomlabs.dev/docs/meta/principles/)
 
 ## v1.0.0 Release
 
@@ -336,7 +336,7 @@ Build it. Use it. Then improve it.
 
 | Document | Purpose |
 |----------|---------|
-| [Principles](/meta/principles) | Design principles (read first) |
+| [Principles](https://cleanroomlabs.dev/docs/meta/principles/) | Design principles (read first) |
 | [Requirements (SRS)](requirements/srs) | Functional and non-functional requirements |
 | [Design (SDD)](design/sdd) | Architecture and component design |
 | [Test Plan](testing/plan) | Test cases with traceability |

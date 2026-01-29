@@ -27,7 +27,7 @@ airgap-deploy-docs/
 │   ├── index.rst              # Main documentation entry
 │   ├── conf.py                # Sphinx configuration (imports shared theme)
 │   ├── readme.rst             # Project overview
-│   ├── roadmap.rst            # Implementation roadmap
+│   ├── roadmap.md             # Implementation roadmap
 │   ├── requirements/          # Software requirements
 │   ├── design/                # Design documents
 │   ├── testing/               # Test plans
@@ -40,7 +40,7 @@ airgap-deploy-docs/
 
 ## Shared Theme
 
-This documentation uses the shared Cleanroom Labs theme from `cleanroom-technical-docs/shared/theme-config.py`.
+This documentation imports the shared Cleanroom Labs theme from the nested submodule at `source/cleanroom-theme/`.
 
 ## Cross-Project References
 
@@ -53,4 +53,4 @@ To reference other AirGap projects:
 - [AirGap Deploy Overview](source/readme.rst)
 - [Requirements Specification](source/requirements/srs.rst)
 - [Design Document](source/design/sdd.rst)
-- [Roadmap](source/roadmap.rst)
+- [Roadmap](source/roadmap.md)
