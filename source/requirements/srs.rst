@@ -155,7 +155,7 @@ Constraints
 
 **Regulatory Constraints:**
 
-- Must comply with open-source licensing (MIT OR Apache-2.0)
+- Must comply with open-source licensing (AGPL-3.0)
 
 **Technical Constraints:**
 
