@@ -7,7 +7,7 @@ Introduction
 Purpose
 ~~~~~~~
 
-This Test Plan describes the testing strategy, approach, and test cases for **airgap-deploy**, ensuring the tool reliably packages applications for air-gapped deployment.
+This Test Plan describes the testing strategy, approach, and test cases for **AirGap Deploy**, ensuring the tool reliably packages applications for air-gapped deployment.
 
 Scope
 ~~~~~
@@ -25,14 +25,6 @@ Scope
 - GUI testing (no GUI in this application)
 - Load testing (not a server application)
 - Security penetration testing (manual review only)
-
-References
-~~~~~~~~~~
-
-- :doc:`Requirements (SRS) <../requirements/srs>`
-- :doc:`Design (SDD) <../design/sdd>`
-- :doc:`Roadmap <../roadmap>`
-- IEEE 829-2008: IEEE Standard for Software Test Documentation
 
 Test Strategy
 -------------
@@ -951,7 +943,7 @@ External Interface Tests
    :tests: FR-DEPLOY-059
    :priority: low
 
-   Verify workflow-level integration with airgap-transfer for large packages
+   Verify workflow-level integration with AirGap Transfer for large packages
 
 .. test:: No Network During Installation
    :id: TC-DEPLOY-EXTIF-011
@@ -1371,6 +1363,3 @@ This table lists all test cases with their validation links.
    :filter: "deploy" in tags
    :style: table
 
-The "Tests" column shows which requirements each test case validates (via the :tests: link).
-
-**End of Test Plan**

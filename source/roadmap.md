@@ -343,7 +343,7 @@ Build it. Use it. Then improve it.
 
 ## See Also
 
-- [Meta-Architecture](/meta/meta-architecture) - How airgap-deploy fits in the AirGap suite
+- [Meta-Architecture](/meta/meta-architecture) - How AirGap Deploy fits in the AirGap suite
 - [Specification Overview](/meta/specification-overview) - Project statistics and traceability overview
 - [Cleanroom Whisper](/cleanroom-whisper/readme) - Primary use case
 - [AirGap Transfer](/airgap-transfer/readme) - Large file transfer companion tool

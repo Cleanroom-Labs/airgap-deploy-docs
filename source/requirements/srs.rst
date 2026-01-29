@@ -7,12 +7,12 @@ Introduction
 Purpose
 ~~~~~~~
 
-This Software Requirements Specification (SRS) describes the functional and non-functional requirements for **airgap-deploy**, a command-line tool for packaging applications and their dependencies for deployment on air-gapped systems.
+This Software Requirements Specification (SRS) describes the functional and non-functional requirements for **AirGap Deploy**, a command-line tool for packaging applications and their dependencies for deployment on air-gapped systems.
 
 This document is intended for:
 
-- Developers implementing airgap-deploy
-- Release engineers using airgap-deploy to package applications
+- Developers implementing AirGap Deploy
+- Release engineers using AirGap Deploy to package applications
 - Technical reviewers evaluating the tool's capabilities
 
 Scope
@@ -22,9 +22,13 @@ Scope
 
    <div style="margin-top: 1.5em;"></div>
 
-**Product Name:** airgap-deploy
+**Product Name:** AirGap Deploy
 
 **Product Purpose:** Simplify the packaging and installation of software on air-gapped systems
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 **Benefits:**
 
@@ -72,36 +76,22 @@ Definitions, Acronyms, and Abbreviations
 | **SHA-256**           | Cryptographic hash function for checksums                          |
 +-----------------------+--------------------------------------------------------------------+
 
-References
-~~~~~~~~~~
-
-- IEEE Std 830-1998: IEEE Recommended Practice for Software Requirements Specifications
-- :doc:`Roadmap <../roadmap>` - Implementation roadmap
-- :doc:`Use Case Analysis <../use-cases/overview>` - Detailed workflows
-- :doc:`Meta-Architecture </meta/meta-architecture>` - Project relationships
-
-Overview
-~~~~~~~~
-
-This SRS is organized as follows:
-
-- **Section 2:** Overall description of the product
-- **Section 3:** Functional requirements
-- **Section 4:** Non-functional requirements
-- **Section 5:** External interface requirements
-
 Overall Description
 -------------------
 
 Product Perspective
 ~~~~~~~~~~~~~~~~~~~
 
-airgap-deploy is a **standalone developer tool** that integrates into existing software development workflows. It operates in two distinct phases:
+AirGap Deploy is a **standalone developer tool** that integrates into existing software development workflows. It operates in two distinct phases:
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 **Phase 1 - Preparation (Connected System):**
 
 - Developer creates ``AirGapDeploy.toml`` manifest
-- airgap-deploy collects application source, dependencies, models, binaries
+- AirGap Deploy collects application source, dependencies, models, binaries
 - Generates deployment package (.tar.gz or .zip)
 - Generates installation scripts (install.sh, install.ps1)
 
@@ -114,16 +104,25 @@ airgap-deploy is a **standalone developer tool** that integrates into existing s
 
 **Relationship to Other Systems:**
 
-- **airgap-transfer:** Optional integration for large packages (see :doc:`meta-architecture </meta/meta-architecture>`)
+- **AirGap Transfer:** Optional integration for large packages (see :doc:`meta-architecture </meta/meta-architecture>`)
 - **Cleanroom Whisper:** Reference implementation and primary use case
 - **CI/CD pipelines:** Integrates with GitHub Actions, GitLab CI for automated package generation
 
 Product Functions
 ~~~~~~~~~~~~~~~~~
 
-airgap-deploy provides the following major functions:
+AirGap Deploy provides the following major functions:
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 **Manifest Parsing** - Parse and validate ``AirGapDeploy.toml`` files
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Component Collection** - Download and collect required components:
 
    - Rust applications with vendored dependencies
@@ -132,7 +131,17 @@ airgap-deploy provides the following major functions:
    - System packages (Linux distributions)
 
 **Packaging** - Create compressed archives with all components
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **Install Script Generation** - Generate platform-specific installation scripts
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
+
 **CLI Interface** - User-friendly command-line tool with progress reporting
 
 User Characteristics
@@ -161,7 +170,7 @@ Constraints
 
 **Technical Constraints:**
 
-- Requires Rust toolchain for building airgap-deploy itself
+- Requires Rust toolchain for building AirGap Deploy itself
 - Preparation phase requires internet access (by design)
 - Installation phase must work completely offline
 - Package size limited by available storage media
@@ -962,7 +971,7 @@ Software Interfaces
    :tags: deploy, external-interface, software, airgap-transfer
    :priority: could
 
-   The system SHALL integrate with airgap-transfer for large package chunking (workflow level, not code level).
+   The system SHALL integrate with AirGap Transfer for large package chunking (workflow level, not code level).
 
 Communications Interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1130,9 +1139,3 @@ Example Manifest
    install_to = "user"
    mode = "interactive"
 
-Glossary
-~~~~~~~~
-
-See Section 1.3 for definitions.
-
-**End of Software Requirements Specification**

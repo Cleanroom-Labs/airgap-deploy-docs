@@ -28,7 +28,7 @@ Prerequisites
 
 - **Connected machine:** Development machine with internet access
 - **Air-gapped machine:** Production system with no network
-- **Transfer method:** USB drives or airgap-transfer utility
+- **Transfer method:** USB drives or AirGap Transfer utility
 - **Target:** Ollama binary + one or more LLM models
 
 --------------
@@ -293,10 +293,10 @@ Error Scenarios
 Integration Points
 ------------------
 
-With airgap-transfer
+With AirGap Transfer
 ~~~~~~~~~~~~~~~~~~~~
 
-For large deployments (multiple models > USB capacity, see :doc:`airgap-transfer workflows </airgap-transfer/use-cases/overview>`):
+For large deployments (multiple models > USB capacity, see :doc:`AirGap Transfer workflows </airgap-transfer/use-cases/overview>`):
 
 .. code:: bash
 
@@ -372,7 +372,7 @@ Post-Deployment Verification
 Related Documents
 -----------------
 
-- :doc:`airgap-deploy Overview <overview>` - General deployment workflow and gap analysis
-- :doc:`airgap-transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
+- :doc:`AirGap Deploy Overview <overview>` - General deployment workflow and gap analysis
+- :doc:`AirGap Transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
 - :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>` - Similar deployment use case
 - :doc:`Principles </meta/principles>` - Design principles for all AirGap tools
