@@ -45,8 +45,8 @@ This documentation imports the shared Cleanroom Labs theme from the nested submo
 ## Cross-Project References
 
 To reference other AirGap projects:
-- `:doc:`airgap-whisper:installation``
-- `:doc:`airgap-transfer:usage``
+- `:doc:`cleanroom-whisper:readme``
+- `:doc:`airgap-transfer:readme``
 
 ## Resources
 

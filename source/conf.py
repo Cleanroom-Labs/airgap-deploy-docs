@@ -95,7 +95,7 @@ needs_extra_options = ['priority']
 
 # Update intersphinx mapping with cross-project references
 intersphinx_mapping.update({
-    'airgap-whisper': ('https://cleanroomlabs.dev/docs/airgap-whisper/', None),
+    'cleanroom-whisper': ('https://cleanroomlabs.dev/docs/cleanroom-whisper/', None),
     'airgap-transfer': ('https://cleanroomlabs.dev/docs/airgap-transfer/', None),
 })
 
