@@ -1,5 +1,5 @@
-Workflow: Ollama Deployment to Air-Gapped System
-================================================
+Use Case: Ollama Deployment to Air-Gapped System
+=================================================
 
 Scenario
 --------
@@ -374,5 +374,5 @@ Related Documents
 
 - :doc:`airgap-deploy Overview <overview>` - General deployment workflow and gap analysis
 - :doc:`airgap-transfer </airgap-transfer/use-cases/overview>` - Large file transfer use cases
-- :doc:`Cleanroom Whisper Workflow <workflow-airgap-whisper>` - Similar deployment workflow
+- :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>` - Similar deployment use case
 - :doc:`Principles </meta/principles>` - Design principles for all AirGap tools

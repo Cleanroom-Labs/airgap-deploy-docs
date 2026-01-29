@@ -1,4 +1,4 @@
-Workflow: Cleanroom Whisper Deployment
+Use Case: Cleanroom Whisper Deployment
 =======================================
 
 This document describes the complete end-to-end workflow for packaging and deploying Cleanroom Whisper using AirGap Deploy.
