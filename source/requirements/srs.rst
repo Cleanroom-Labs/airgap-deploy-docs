@@ -104,12 +104,14 @@ AirGap Deploy is a **standalone developer tool** that integrates into existing s
 
 **Relationship to Other Systems:**
 
-- **AirGap Transfer:** Optional integration for large packages (see :doc:`meta-architecture </meta/meta-architecture>`)
+- **AirGap Transfer:** Optional integration for large packages (see Meta-Architecture_)
 - **Cleanroom Whisper:** Reference implementation and primary use case
 - **CI/CD pipelines:** Integrates with GitHub Actions, GitLab CI for automated package generation
 
 Product Functions
 ~~~~~~~~~~~~~~~~~
+
+.. _Meta-Architecture: https://cleanroomlabs.dev/docs/meta/meta-architecture.html
 
 AirGap Deploy provides the following major functions:
 
@@ -1138,4 +1140,3 @@ Example Manifest
    method = "build-from-source"
    install_to = "user"
    mode = "interactive"
-

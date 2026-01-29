@@ -95,7 +95,7 @@ When deployment packages exceed USB capacity, AirGap Transfer handles chunked tr
 - Chunks transferred across air-gap on multiple USB drives
 - Reconstructed on target, then installed normally
 
-**See:** :doc:`airgap-transfer:use-cases/overview`
+**See:** `AirGap Transfer use cases <https://cleanroomlabs.dev/docs/airgap-transfer/use-cases/overview.html>`_
 
 With Cleanroom Whisper
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -155,4 +155,4 @@ See Also
 - :doc:`Design (SDD) <../design/sdd>` - Architecture and implementation
 - :doc:`Test Plan <../testing/plan>` - Test cases and verification
 - :doc:`Roadmap <../roadmap>` - Implementation roadmap
-- `Principles <https://cleanroomlabs.dev/docs/meta/principles/>`_ - Design principles guiding all decisions
+- `Principles <https://cleanroomlabs.dev/docs/meta/principles.html>`_ - Design principles guiding all decisions
