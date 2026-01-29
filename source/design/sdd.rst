@@ -2,7 +2,7 @@ Software Design Document
 ========================
 
 Introduction
----------------
+------------
 
 Purpose
 ~~~~~~~
@@ -45,10 +45,8 @@ References
 - :doc:`Use Case Analysis <../use-cases/overview>`
 - IEEE 1016-2009: IEEE Standard for Information Technology—Systems Design—Software Design Descriptions
 
---------------
-
 System Architecture
-----------------------
+-------------------
 
 Architectural Style
 ~~~~~~~~~~~~~~~~~~~
@@ -149,10 +147,8 @@ Component Descriptions
 | **Install Script Generator** | Generate installation scripts            | ``InstallGenerator``, ``InstallStep``                |
 +------------------------------+------------------------------------------+------------------------------------------------------+
 
---------------
-
 Detailed Design
-------------------
+---------------
 
 Core Data Structures
 ~~~~~~~~~~~~~~~~~~~~
@@ -537,10 +533,8 @@ Install Script Template
    echo "Installation complete!" | tee -a "$LOG_FILE"
    echo "Installed to: $INSTALL_PREFIX" | tee -a "$LOG_FILE"
 
---------------
-
 Interface Specifications
----------------------------
+-----------------------
 
 CLI Interface
 ~~~~~~~~~~~~~
@@ -576,10 +570,8 @@ Component Plugin Interface
 
 **Note:** Plugin system deferred to post-v1.0 (see :doc:`Roadmap <../roadmap>` Phase 7)
 
---------------
-
 Design Decisions and Rationales
-----------------------------------
+-------------------------------
 
 Why TOML for Manifests?
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -656,10 +648,8 @@ Why Generate Install Scripts Instead of Installing Directly?
 
 **Trade-off:** Less control over installation process, script generation complexity
 
---------------
-
 Error Handling Strategy
---------------------------
+----------------------
 
 Error Types
 ~~~~~~~~~~~
@@ -728,10 +718,8 @@ Logging
 - Console: INFO and above (with colors)
 - Log file (optional): DEBUG and above
 
---------------
-
 Performance Considerations
------------------------------
+--------------------------
 
 Parallel Collection
 ~~~~~~~~~~~~~~~~~~~
@@ -792,10 +780,8 @@ Caching
 
 **Benefit:** Skip re-downloading large model files if already present (saves bandwidth and time)
 
---------------
-
 Security Considerations
---------------------------
+-----------------------
 
 Checksum Verification
 ~~~~~~~~~~~~~~~~~~~~~
@@ -852,10 +838,8 @@ No Arbitrary Code Execution
 - Build commands are templated strings, not code
 - Install steps are data structures, not scripts
 
---------------
-
 Testing Strategy
--------------------
+----------------
 
 Unit Tests
 ~~~~~~~~~~
@@ -917,10 +901,8 @@ Platform Testing
 - macOS: macOS 12 (Intel), macOS 14 (Apple Silicon)
 - Windows: Windows 10, Windows 11
 
---------------
-
 Future Enhancements
------------------------
+-------------------
 
 Plugin System (v2.0)
 ~~~~~~~~~~~~~~~~~~~~
@@ -952,7 +934,5 @@ Sign packages for verification on air-gapped systems:
    airgap-deploy prep --sign-with ~/.gnupg/key.asc
 
 **Requires:** GPG integration, key management
-
---------------
 
 **End of Software Design Document**

@@ -2,7 +2,7 @@ Software Requirements Specification
 ===================================
 
 Introduction
----------------
+------------
 
 Purpose
 ~~~~~~~
@@ -17,6 +17,10 @@ This document is intended for:
 
 Scope
 ~~~~~
+
+.. raw:: html
+
+   <div style="margin-top: 1.5em;"></div>
 
 **Product Name:** airgap-deploy
 
@@ -35,7 +39,7 @@ Scope
 - Reduce manual effort in preparing air-gap packages from days to minutes
 - Ensure reproducible, verifiable deployments
 
-**Out of Scope (v1.0):**
+**Out of Scope:**
 
 - GUI interface (CLI only)
 - Network-based distribution mechanisms
@@ -86,10 +90,8 @@ This SRS is organized as follows:
 - **Section 4:** Non-functional requirements
 - **Section 5:** External interface requirements
 
---------------
-
 Overall Description
-----------------------
+-------------------
 
 Product Perspective
 ~~~~~~~~~~~~~~~~~~~
@@ -184,10 +186,8 @@ Assumptions and Dependencies
 - External: Git, cargo, platform-specific package managers
 - Rust crates: See :doc:`Roadmap <../roadmap>` (Dependencies Summary) for complete list
 
---------------
-
 Functional Requirements
---------------------------
+-----------------------
 
 Manifest Parsing and Validation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,8 +231,6 @@ Manifest Parsing and Validation
    :priority: should
 
    The system SHALL support schema versioning to enable future manifest evolution.
-
---------------
 
 Component Collection
 ~~~~~~~~~~~~~~~~~~~~
@@ -395,8 +393,6 @@ System Package Component
 
 **Note:** SystemPackageComponent is marked as **optional for MVP** and may be deferred to v0.2.
 
---------------
-
 Packaging
 ~~~~~~~~~
 
@@ -447,8 +443,6 @@ Packaging
    :priority: should
 
    The system SHALL support configurable compression levels.
-
---------------
 
 Installation Script Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -509,8 +503,6 @@ Installation Script Generation
 
    Installation scripts SHALL provide clear error messages and recovery instructions.
 
---------------
-
 Command-Line Interface
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -554,8 +546,6 @@ Command-Line Interface
 
    The system SHALL support --help flag for all commands.
 
---------------
-
 Configuration Management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -582,8 +572,6 @@ Configuration Management
    :priority: must
 
    Command-line arguments SHALL override global configuration.
-
---------------
 
 Error Handling and Recovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -620,10 +608,8 @@ Error Handling and Recovery
 
    The system SHALL log all operations to enable debugging.
 
---------------
-
 Non-Functional Requirements
-------------------------------
+---------------------------
 
 Performance
 ~~~~~~~~~~~
@@ -878,10 +864,8 @@ Scalability
 
    Install scripts SHALL use platform-specific default paths (user: ~/.local on Linux/macOS, %LOCALAPPDATA% on Windows; system: /usr/local on Linux/macOS, C:\Program Files on Windows)
 
---------------
-
 External Interface Requirements
-----------------------------------
+-------------------------------
 
 User Interfaces
 ~~~~~~~~~~~~~~~
@@ -999,10 +983,8 @@ Communications Interfaces
 
    The system SHALL NOT use network communication during installation phase (enforced by air-gap).
 
---------------
-
 Enhanced Installation Features
-----------------------------------
+------------------------------
 
 The following requirements address gaps identified in use case analysis.
 
@@ -1106,10 +1088,8 @@ Dependency Management
 
    Install scripts SHALL verify sufficient disk space before installation
 
---------------
-
 Appendices
--------------
+----------
 
 Example Manifest
 ~~~~~~~~~~~~~~~~
@@ -1154,7 +1134,5 @@ Glossary
 ~~~~~~~~
 
 See Section 1.3 for definitions.
-
---------------
 
 **End of Software Requirements Specification**

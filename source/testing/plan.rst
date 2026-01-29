@@ -2,7 +2,7 @@ Test Plan
 =========
 
 Introduction
----------------
+------------
 
 Purpose
 ~~~~~~~
@@ -34,10 +34,8 @@ References
 - :doc:`Roadmap <../roadmap>`
 - IEEE 829-2008: IEEE Standard for Software Test Documentation
 
---------------
-
 Test Strategy
-----------------
+-------------
 
 Test Levels
 ~~~~~~~~~~~
@@ -103,10 +101,8 @@ Test Environment
 - Test actual air-gap deployment
 - Ubuntu 22.04 VM (primary test target)
 
---------------
-
 Test Cases
--------------
+----------
 
 Manifest Parsing (FR-1.x)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,8 +152,6 @@ Manifest Parsing (FR-1.x)
 
    Verify warning for future schema version
 
---------------
-
 RustAppComponent (FR-2.1 to FR-2.5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -197,8 +191,6 @@ RustAppComponent (FR-2.1 to FR-2.5)
 
    Verify error handling for cargo vendor failures
 
---------------
-
 ExternalBinaryComponent (FR-2.6 to FR-2.9)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -237,8 +229,6 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
    :priority: high
 
    Verify retry logic for network failures
-
---------------
 
 ModelFileComponent (FR-2.10 to FR-2.14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -297,8 +287,6 @@ ModelFileComponent (FR-2.10 to FR-2.14)
 
    Verify cached file reuse
 
---------------
-
 Packaging (FR-3.1 to FR-3.6)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -346,8 +334,6 @@ Packaging (FR-3.1 to FR-3.6)
    :priority: medium
 
    Verify large package creation with stable memory usage
-
---------------
 
 Install Script Generation (FR-4.1 to FR-4.7)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -405,8 +391,6 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :priority: high
 
    Verify clear error message for missing dependencies
-
---------------
 
 CLI Interface (FR-5.1 to FR-5.5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -474,8 +458,6 @@ CLI Interface (FR-5.1 to FR-5.5)
 
    Verify --help flag displays usage information
 
---------------
-
 Error Handling (FR-7.1 to FR-7.4)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -515,8 +497,6 @@ Error Handling (FR-7.1 to FR-7.4)
 
    Verify error for invalid platform target
 
---------------
-
 End-to-End Workflows
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -546,8 +526,6 @@ End-to-End Workflows
    :priority: high
 
    Verify same manifest builds packages for all platforms
-
---------------
 
 Performance Tests
 ~~~~~~~~~~~~~~~~~
@@ -587,8 +565,6 @@ Performance Tests
    :priority: medium
 
    Verify installation completes within 20 minutes
-
---------------
 
 Security Tests
 ~~~~~~~~~~~~~~
@@ -740,8 +716,6 @@ Enhanced Installation Feature Tests
 
    Verify install script uses platform-specific default paths on Linux, macOS, Windows
 
---------------
-
 Component Configuration Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -772,8 +746,6 @@ Component Configuration Tests
 
    Verify model file supports name, url, checksum, required, install_path config options
 
---------------
-
 System Package Component Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -795,8 +767,6 @@ System Package Component Tests
 
    Verify install scripts configure system package installation commands
 
---------------
-
 Installation Detection Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -808,8 +778,6 @@ Installation Detection Tests
    :priority: high
 
    Verify install script detects existing installation and offers upgrade path
-
---------------
 
 CLI Feature Tests
 ~~~~~~~~~~~~~~~~~
@@ -841,8 +809,6 @@ CLI Feature Tests
 
    Verify --verbose flag enables detailed operation logging
 
---------------
-
 Configuration Management Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -873,8 +839,6 @@ Configuration Management Tests
 
    Verify command-line arguments override global configuration values
 
---------------
-
 Error Handling Tests
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -895,8 +859,6 @@ Error Handling Tests
    :priority: medium
 
    Verify all operations are logged to enable debugging
-
---------------
 
 External Interface Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1000,8 +962,6 @@ External Interface Tests
 
    Verify installation phase uses no network communication (enforced by air-gap)
 
---------------
-
 Reliability NFR Tests
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1022,8 +982,6 @@ Reliability NFR Tests
    :priority: high
 
    Verify system handles Ctrl+C and system shutdown gracefully
-
---------------
 
 Usability NFR Tests
 ~~~~~~~~~~~~~~~~~~~
@@ -1064,8 +1022,6 @@ Usability NFR Tests
 
    Verify progress indicators show for operations taking longer than 2 seconds
 
---------------
-
 Maintainability NFR Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1105,8 +1061,6 @@ Maintainability NFR Tests
 
    Verify code is formatted with rustfmt
 
---------------
-
 Portability NFR Tests
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1119,8 +1073,6 @@ Portability NFR Tests
 
    Verify install scripts are compatible with Bash 4.0+ and PowerShell 5.1+
 
---------------
-
 Security NFR Tests
 ~~~~~~~~~~~~~~~~~~
 
@@ -1132,8 +1084,6 @@ Security NFR Tests
    :priority: critical
 
    Verify install scripts require explicit confirmation before destructive operations
-
---------------
 
 Scalability NFR Tests
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1156,10 +1106,8 @@ Scalability NFR Tests
 
    Verify parallel collection scales with available CPU cores
 
---------------
-
 Test Execution
------------------
+--------------
 
 Unit Tests
 ~~~~~~~~~~
@@ -1224,10 +1172,8 @@ Air-Gapped VM Testing
    # Run install script
    # Verify installation
 
---------------
-
 Test Metrics
----------------
+------------
 
 Coverage Metrics
 ~~~~~~~~~~~~~~~~
@@ -1262,10 +1208,8 @@ Metric                    Target   Test Case
 **Install time**          < 20 min TC-113
 ========================= ======== =========
 
---------------
-
 Test Schedule
-----------------
+-------------
 
 Phase 1: Core Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1303,10 +1247,8 @@ Phase 6: Integration & System
 - TC-110 to TC-113 (Performance)
 - TC-120 to TC-123 (Security)
 
---------------
-
 Defect Management
---------------------
+------------------
 
 Severity Levels
 ~~~~~~~~~~~~~~~
@@ -1331,10 +1273,8 @@ Defect Tracking
 - Tag with affected component
 - Link to failing test case
 
---------------
-
 Test Deliverables
---------------------
+-----------------
 
 Test Code
 ~~~~~~~~~
@@ -1357,10 +1297,8 @@ Test Documentation
 - Test case documentation (inline in test code)
 - Testing guide for contributors
 
---------------
-
 Risks and Mitigation
------------------------
+---------------------
 
 +-------------------------------+---------------------+---------------------------------------------+
 | Risk                          | Impact              | Mitigation                                  |
@@ -1374,10 +1312,8 @@ Risks and Mitigation
 | Air-gapped VM setup complex   | Low                 | Document setup, provide VM image            |
 +-------------------------------+---------------------+---------------------------------------------+
 
---------------
-
 Approval
-------------
+--------
 
 Test plan will be approved when:
 
@@ -1388,8 +1324,6 @@ Test plan will be approved when:
 - ✅ Ready to begin testing during implementation
 
 **Status:** ✅ Test Plan Complete - Ready for implementation
-
---------------
 
 Requirements Traceability
 -------------------------
@@ -1438,7 +1372,5 @@ This table lists all test cases with their validation links.
    :style: table
 
 The "Tests" column shows which requirements each test case validates (via the :tests: link).
-
---------------
 
 **End of Test Plan**

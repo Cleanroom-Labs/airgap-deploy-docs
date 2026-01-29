@@ -6,8 +6,6 @@ Purpose
 
 This document provides an overview of primary use cases for AirGap Deploy, a declarative packaging tool that enables developers to prepare any application for deployment on air-gapped systems using simple TOML manifests.
 
---------------
-
 User Personas
 -------------
 
@@ -39,8 +37,6 @@ Open-Source Maintainer
 - **Environment:** GitHub releases, community users in restricted environments
 - **Priority:** Low maintenance overhead, works for multiple platforms
 
---------------
-
 Primary Use Cases
 -----------------
 
@@ -51,8 +47,6 @@ Primary Use Cases
 +----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
 | :doc:`Ollama Deployment <use-case-ollama>`                           | IT administrator / developer  | Create manifest → prep → transfer → install   |
 +----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
-
---------------
 
 Common Requirements Across All Use Cases
 -----------------------------------------
@@ -70,8 +64,6 @@ Common Requirements Across All Use Cases
 +--------------------------------------+-----------------------------------------------------------+
 | Self-contained packages              | Single archive with all dependencies vendored             |
 +--------------------------------------+-----------------------------------------------------------+
-
---------------
 
 Integration Scenarios
 ---------------------
@@ -107,8 +99,6 @@ AirGap Deploy integrates with CI/CD for multi-platform releases:
 - Release artifacts are uploaded automatically
 - Users download pre-built packages from releases
 
---------------
-
 Out of Scope
 ------------
 
@@ -126,8 +116,6 @@ The following are explicitly NOT supported:
 | Application-specific build logic  | Remains generic; apps define own steps    |
 +-----------------------------------+-------------------------------------------+
 
---------------
-
 Success Metrics
 ---------------
 
@@ -140,8 +128,6 @@ Manifest complexity              < 50 lines for typical application
 Package integrity                100% checksum verification
 Cross-platform support           Linux x86_64, macOS ARM, Windows x86_64
 ================================ =======================================
-
---------------
 
 See Also
 --------
