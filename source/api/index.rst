@@ -224,4 +224,4 @@ See Also
 - :doc:`/airgap-deploy/requirements/srs` - Requirements this API implements
 - :doc:`/airgap-deploy/design/sdd` - Detailed design specifications
 - :doc:`/airgap-deploy/testing/plan` - Test cases validating this API
-- :doc:`/airgap-deploy/use-cases/workflow-airgap-whisper` - Real-world usage example
+- :doc:`/airgap-deploy/use-cases/use-case-airgap-whisper` - Real-world usage example

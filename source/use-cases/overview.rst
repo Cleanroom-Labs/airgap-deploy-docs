@@ -47,9 +47,9 @@ Primary Use Cases
 +----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
 | Use Case                                                             | Actor                         | Workflow                                      |
 +======================================================================+===============================+===============================================+
-| :doc:`Cleanroom Whisper Deployment <workflow-airgap-whisper>`        | Release engineer / developer  | Create manifest → prep → CI/CD → release      |
+| :doc:`Cleanroom Whisper Deployment <use-case-airgap-whisper>`        | Release engineer / developer  | Create manifest → prep → CI/CD → release      |
 +----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
-| :doc:`Ollama Deployment <workflow-ollama>`                           | IT administrator / developer  | Create manifest → prep → transfer → install   |
+| :doc:`Ollama Deployment <use-case-ollama>`                           | IT administrator / developer  | Create manifest → prep → transfer → install   |
 +----------------------------------------------------------------------+-------------------------------+-----------------------------------------------+
 
 --------------
@@ -96,7 +96,7 @@ Cleanroom Whisper is AirGap Deploy's primary reference use case:
 - Generated install script builds from source on the air-gapped system
 - Post-install configuration enables auto-discovery of models and binary
 
-**See:** :doc:`workflow-airgap-whisper`
+**See:** :doc:`use-case-airgap-whisper`
 
 With CI/CD Systems
 ~~~~~~~~~~~~~~~~~~
