@@ -1,5 +1,5 @@
-# Sphinx and extensions for AirGap Deploy documentation  
-# Mirrors shared extensions from cleanroom-technical-docs/shared/extensions.txt
+# Sphinx and extensions for AirGap Deploy documentation
+# Keep in sync with the aggregator baseline in cleanroom-technical-docs/requirements.txt
 
 sphinx>=7.0.0,<8.0.0
 sphinx-rtd-theme>=3.0.0

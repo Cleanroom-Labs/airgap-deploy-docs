@@ -383,10 +383,12 @@ Start Here
 +---------------------------------------------+-------------------------------------+
 | Document                                    | Purpose                             |
 +=============================================+=====================================+
-| :doc:`Principles </meta/principles>`        | Core design principles (read first) |
+| Principles_                                 | Core design principles (read first) |
 +---------------------------------------------+-------------------------------------+
 | :doc:`Roadmap <roadmap>`                    | Project status and direction        |
 +---------------------------------------------+-------------------------------------+
+
+.. _Principles: https://cleanroomlabs.dev/docs/meta/principles/
 
 Technical Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~

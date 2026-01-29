@@ -155,4 +155,4 @@ See Also
 - :doc:`Design (SDD) <../design/sdd>` - Architecture and implementation
 - :doc:`Test Plan <../testing/plan>` - Test cases and verification
 - :doc:`Roadmap <../roadmap>` - Implementation roadmap
-- :doc:`Principles </meta/principles>` - Design principles guiding all decisions
+- `Principles <https://cleanroomlabs.dev/docs/meta/principles/>`_ - Design principles guiding all decisions
