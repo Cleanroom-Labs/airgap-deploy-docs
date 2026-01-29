@@ -7,3 +7,4 @@ Use Cases and Workflows
    overview
    workflow-airgap-whisper
    workflow-ollama
+   gap-analysis

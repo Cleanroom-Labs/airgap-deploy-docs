@@ -289,7 +289,7 @@ MVP is complete when:
 - [ ] Package creation completes efficiently for typical applications
 - [ ] 80%+ code coverage
 - [ ] Zero clippy warnings
-- [ ] All licenses compatible with MIT/Apache-2.0
+- [ ] All dependency licenses compatible with AGPL-3.0
 - [ ] First-time user can create package quickly and easily
 - [ ] Documentation covers all use cases
 

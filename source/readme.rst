@@ -468,6 +468,22 @@ AirGap Deploy fills the gap for **lightweight, general-purpose application packa
 - ✅ **Dependency verification**: SHA-256 checksums for all components
 - ✅ **Automated builds**: Installation scripts handle building from source offline
 
+**vs build systems** (`Bazel <https://bazel.build/>`__, `CMake <https://cmake.org/>`__ + CPack):
+
+- ✅ **No build graph required**: Declarative manifests, not build rules
+- ✅ **Packages pre-built binaries**: Not limited to building from source
+- ✅ **ML model support**: First-class handling for large model files with checksums
+- ✅ **Installation script generation**: Produces ready-to-run install scripts, not build artifacts
+- Bazel/CMake solve *building* software; AirGap Deploy solves *packaging already-built software* for offline transfer
+
+**vs package managers** (`Nix <https://nixos.org/>`__, `Homebrew <https://brew.sh/>`__, `Flatpak <https://flatpak.org/>`__):
+
+- ✅ **No package manager on target**: Target system needs zero tooling installed
+- ✅ **No store or registry**: Self-contained archive with install script, no package database
+- ✅ **Air-gap native**: Designed for zero-network environments from the start
+- ✅ **Multi-component bundles**: Packages app + external binaries + models together
+- Nix can do offline installs via ``nix copy``, but requires Nix on the target system and a closure export workflow; AirGap Deploy produces a standalone archive anyone can extract and run
+
 **Unique value proposition:** The only tool designed specifically for packaging Rust applications with ML models (like Cleanroom Whisper + whisper.cpp + model files) for air-gapped desktop deployment.
 
 **Complementary to Zarf:** Use Zarf for Kubernetes workloads, AirGap Deploy for desktop applications. Both solve air-gap deployment, different targets.
@@ -475,7 +491,7 @@ AirGap Deploy fills the gap for **lightweight, general-purpose application packa
 License
 -------
 
-Dual-licensed under MIT OR Apache-2.0 (your choice).
+Licensed under AGPL-3.0. Commercial licenses are available for businesses and other organizations.
 
 Contributing
 ------------
