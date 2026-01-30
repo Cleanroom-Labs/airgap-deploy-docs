@@ -495,7 +495,7 @@ End-to-End Workflows
 .. test:: Cleanroom Whisper End-to-End Deployment
    :id: TC-E2E-001
    :status: approved
-   :tags: deploy, e2e, airgap-whisper, system
+   :tags: deploy, e2e, cleanroom-whisper, system
    :tests: UC-DEPLOY-001
    :priority: critical
 

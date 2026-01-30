@@ -51,7 +51,7 @@ Cleanroom Whisper Deployment
 - Cross-platform install scripts (Bash + PowerShell)
 - Checksum verification of all downloaded artifacts
 
-:doc:`Use Case: Cleanroom Whisper Deployment <use-case-airgap-whisper>`
+:doc:`Use Case: Cleanroom Whisper Deployment <use-case-cleanroom-whisper>`
 
 Ollama Deployment
 ~~~~~~~~~~~~~~~~~~~~
@@ -106,7 +106,7 @@ Cleanroom Whisper is AirGap Deploy's primary reference use case:
 - Generated install script builds from source on the air-gapped system
 - Post-install configuration enables auto-discovery of models and binary
 
-**See:** :doc:`use-case-airgap-whisper`
+**See:** :doc:`use-case-cleanroom-whisper`
 
 With CI/CD Systems
 ~~~~~~~~~~~~~~~~~~
