@@ -5,6 +5,6 @@ Use Cases
    :maxdepth: 1
 
    overview
-   use-case-airgap-whisper
+   use-case-cleanroom-whisper
    use-case-ollama
    gap-analysis

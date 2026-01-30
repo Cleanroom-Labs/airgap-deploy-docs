@@ -270,7 +270,7 @@ Example 1: Rust Application with Dependencies
 .. code:: toml
 
    [package]
-   name = "airgap-whisper"
+   name = "cleanroom-whisper"
    version = "0.1.0"
    description = "Offline audio transcription"
 

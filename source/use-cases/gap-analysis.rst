@@ -55,7 +55,7 @@ Gap 1: Post-Installation Configuration
 .. code:: toml
 
    [install.config]
-   config_file = "~/.config/airgap-whisper/config.toml"
+   config_file = "~/.config/cleanroom-whisper/config.toml"
    config_template = """
    # Cleanroom Whisper auto-discovers binary and models from this path
    whisper_path = "{{ install_prefix }}"
@@ -64,14 +64,14 @@ Gap 1: Post-Installation Configuration
 **Install script should:**
 
 Build and install whisper.cpp to known location
-Copy all models to known location (``{{ install_prefix }}/share/airgap-whisper/models/``)
+Copy all models to known location (``{{ install_prefix }}/share/cleanroom-whisper/models/``)
 Generate config file with install prefix
 Install Cleanroom Whisper binary
 
 **Cleanroom Whisper runtime auto-discovery:**
 
 - Binary: Search ``whisper_path/bin/`` for ``whisper-main``, ``main``, ``whisper-cli``, etc.
-- Models: Scan ``whisper_path/share/airgap-whisper/models/*.bin``
+- Models: Scan ``whisper_path/share/cleanroom-whisper/models/*.bin``
 - No need for explicit paths in config
 
 Gap 2: Multiple Model Support
@@ -155,8 +155,8 @@ Gap 4: Installation Locations & Permissions
 
 - User install: ``~/.local/bin`` (Linux/macOS), ``%LOCALAPPDATA%\Programs`` (Windows)?
 - System install: ``/usr/local/bin`` (needs sudo)?
-- Models: ``~/.local/share/airgap-whisper/models`` or ``/usr/share/airgap-whisper/models``?
-- Config: ``~/.config/airgap-whisper/config.toml`` or ``/etc/airgap-whisper/config.toml``?
+- Models: ``~/.local/share/cleanroom-whisper/models`` or ``/usr/share/cleanroom-whisper/models``?
+- Config: ``~/.config/cleanroom-whisper/config.toml`` or ``/etc/cleanroom-whisper/config.toml``?
 
 **Needed:** Platform-specific path resolution in install scripts.
 
@@ -212,19 +212,19 @@ Use Case 2: End User Installing on Air-Gapped System (Primary)
 
 **Workflow:**
 
-Download ``airgap-whisper-linux-x86_64.tar.gz`` via USB
-Extract: ``tar -xzf airgap-whisper-linux-x86_64.tar.gz``
-Run: ``cd airgap-whisper-linux-x86_64 && ./install.sh``
+Download ``cleanroom-whisper-linux-x86_64.tar.gz`` via USB
+Extract: ``tar -xzf cleanroom-whisper-linux-x86_64.tar.gz``
+Run: ``cd cleanroom-whisper-linux-x86_64 && ./install.sh``
 Install script:
 
    - Checks Rust (installs from included installer if missing)
    - Checks ALSA (installs from included .deb if missing)
    - Builds whisper.cpp
-   - Builds airgap-whisper
+   - Builds cleanroom-whisper
    - Installs to ``~/.local/bin``
-   - Generates ``~/.config/airgap-whisper/config.toml``
+   - Generates ``~/.config/cleanroom-whisper/config.toml``
 
-Run: ``airgap-whisper``
+Run: ``cleanroom-whisper``
 
 **Current Plan Support:** ⚠️ Mostly supported, gaps in config generation
 
@@ -237,7 +237,7 @@ Use Case 3: Advanced User Custom Build (Secondary)
 
 **Workflow:**
 
-Clone airgap-whisper repo
+Clone cleanroom-whisper repo
 Edit ``AirGapDeploy.toml`` to include only desired models
 Run: ``airgap-deploy prep --target linux-x86_64``
 Transfer to air-gapped system
@@ -260,7 +260,7 @@ Create deployment script:
    .. code:: bash
 
       # Unattended install
-      ./install.sh --non-interactive --prefix /opt/airgap-whisper
+      ./install.sh --non-interactive --prefix /opt/cleanroom-whisper
 
 Deploy via configuration management (Ansible, GPO, etc.)
 
@@ -284,7 +284,7 @@ Recommendation 1: Add Post-Install Configuration with Auto-Discovery
 
    # Simple post-install configuration - let app auto-discover details
    [install.config]
-   config_file = "~/.config/airgap-whisper/config.toml"
+   config_file = "~/.config/cleanroom-whisper/config.toml"
    config_template = """
    # Cleanroom Whisper auto-discovers binary and models from this path
    whisper_path = "{{ install_prefix }}"
@@ -303,19 +303,19 @@ Recommendation 1: Add Post-Install Configuration with Auto-Discovery
        "cp main {{ install_prefix }}/bin/whisper-main"
    ]
    models = [
-       "mkdir -p {{ install_prefix }}/share/airgap-whisper/models",
-       "cp models/*.bin {{ install_prefix }}/share/airgap-whisper/models/"
+       "mkdir -p {{ install_prefix }}/share/cleanroom-whisper/models",
+       "cp models/*.bin {{ install_prefix }}/share/cleanroom-whisper/models/"
    ]
-   airgap_whisper = [
-       "cd airgap-whisper",
+   cleanroom_whisper = [
+       "cd cleanroom-whisper",
        "cargo build --release --offline",
-       "cp target/release/airgap-whisper {{ install_prefix }}/bin/"
+       "cp target/release/cleanroom-whisper {{ install_prefix }}/bin/"
    ]
 
 **Cleanroom Whisper Auto-Discovery:**
 
 - Discovers whisper binary by searching ``whisper_path/bin/`` for known names
-- Discovers all models by scanning ``whisper_path/share/airgap-whisper/models/*.bin``
+- Discovers all models by scanning ``whisper_path/share/cleanroom-whisper/models/*.bin``
 - No explicit paths needed in config, improving UX
 
 **Implementation:** Phase 4 (Install Script Generation)
@@ -397,7 +397,7 @@ Recommendation 3: Installation Modes
    fi
 
    # Non-interactive mode for enterprise
-   # ./install.sh MODE=automatic INSTALL_PREFIX=/opt/airgap-whisper
+   # ./install.sh MODE=automatic INSTALL_PREFIX=/opt/cleanroom-whisper
 
 **Implementation:** Phase 4 (Install Script Generation)
 
@@ -498,7 +498,7 @@ Example: Complete Cleanroom Whisper Manifest
 .. code:: toml
 
    [package]
-   name = "airgap-whisper"
+   name = "cleanroom-whisper"
    version = "0.1.0"
    description = "Offline audio transcription"
 
@@ -559,12 +559,12 @@ Example: Complete Cleanroom Whisper Manifest
    # Post-install configuration
    # Cleanroom Whisper will automatically discover models and binary from whisper_path
    [install.config]
-   config_file = "~/.config/airgap-whisper/config.toml"
+   config_file = "~/.config/cleanroom-whisper/config.toml"
    config_template = """
    # Cleanroom Whisper looks for whisper.cpp installation here
    # The tool will automatically discover:
    #   - Binary: <whisper_path>/bin/whisper-main (or main, whisper-cli)
-   #   - Models: <whisper_path>/share/airgap-whisper/models/*.bin
+   #   - Models: <whisper_path>/share/cleanroom-whisper/models/*.bin
    whisper_path = "{{ install_prefix }}"
 
    [audio]
@@ -586,19 +586,19 @@ Example: Complete Cleanroom Whisper Manifest
    ]
 
    models = [
-       "mkdir -p {{ install_prefix }}/share/airgap-whisper/models",
-       "cp models/*.bin {{ install_prefix }}/share/airgap-whisper/models/",
+       "mkdir -p {{ install_prefix }}/share/cleanroom-whisper/models",
+       "cp models/*.bin {{ install_prefix }}/share/cleanroom-whisper/models/",
    ]
 
-   airgap_whisper = [
-       "cd airgap-whisper",
+   cleanroom_whisper = [
+       "cd cleanroom-whisper",
        "cargo build --release --offline",
        "mkdir -p {{ install_prefix }}/bin",
-       "cp target/release/airgap-whisper {{ install_prefix }}/bin/",
+       "cp target/release/cleanroom-whisper {{ install_prefix }}/bin/",
    ]
 
    config = [
-       "mkdir -p ~/.config/airgap-whisper",
+       "mkdir -p ~/.config/cleanroom-whisper",
        "# Config file already generated by template",
    ]
 
@@ -627,7 +627,7 @@ With this simpler configuration, Cleanroom Whisper's runtime logic:
 
    impl WhisperConfig {
        pub fn from_config_file() -> Result<Self> {
-           let config = read_config("~/.config/airgap-whisper/config.toml")?;
+           let config = read_config("~/.config/cleanroom-whisper/config.toml")?;
            Ok(Self {
                whisper_path: config.whisper_path,
            })
@@ -647,7 +647,7 @@ With this simpler configuration, Cleanroom Whisper's runtime logic:
 
        /// Auto-discover all available models
        pub fn available_models(&self) -> Result<Vec<ModelInfo>> {
-           let models_dir = self.whisper_path.join("share/airgap-whisper/models");
+           let models_dir = self.whisper_path.join("share/cleanroom-whisper/models");
            let mut models = Vec::new();
 
            for entry in std::fs::read_dir(models_dir)? {
@@ -720,7 +720,7 @@ Recommended Actions
 
 **Immediate (Phase 1-2):** Add optional component support to manifest schema
 **Phase 4 Enhancement:** Implement config generation, dependency checks, installation modes
-**Documentation:** Create complete Cleanroom Whisper example in ``examples/airgap-whisper/``
+**Documentation:** Create complete Cleanroom Whisper example in ``examples/cleanroom-whisper/``
 **Testing:** Validate on actual air-gapped VMs before v0.1.0 release
 
 The foundation is solid, but these enhancements are needed for a smooth Cleanroom Whisper deployment experience.
