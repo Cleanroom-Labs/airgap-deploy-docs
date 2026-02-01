@@ -18,19 +18,17 @@ Build a deployment tool that makes air-gap packaging simple. Ship it. See what h
 
 <br>
 
-**Target Date:** May 23, 2026 (MVP Complete)
+**Target:** Suite Milestone 3 (Month 6) — MVP Complete
 
-**Development Schedule:** March 31 - May 23, 2026 (8 weeks)
-
-**Note:** Development begins after AirGap Transfer MVP is complete.
+**Note:** Development begins at project start (Suite Milestone 1) and continues through Suite Milestone 3.
 
 ## Current Status
 
-**Phase:** Planning Complete
+**Phase:** Preliminary Planning Complete
 
-**Next:** Begin MVP implementation
+**Next:** Finalize plan and begin MVP implementation
 
-All requirements, design, and test specifications are complete. Ready to start Phase 1.
+Requirements, design, and test specifications need some minor adjustments and a final review.
 
 <br>
 
@@ -52,7 +50,7 @@ All requirements, design, and test specifications are complete. Ready to start P
 
 ### Phase 1: Core Infrastructure
 
-**Target Date:** April 11, 2026
+**Target:** Suite Milestone 1 (Month 2)
 
 **Goal:** Establish project structure and core abstractions
 
@@ -78,17 +76,24 @@ All requirements, design, and test specifications are complete. Ready to start P
 - [ ] Validation logic
 - [ ] Schema versioning support
 
+**Error Handling** (src/error.rs):
+
+- [ ] Unified error type with context (using thiserror)
+- [ ] Actionable error messages with recovery suggestions
+- [ ] Non-zero exit codes for all failure modes
+- [ ] Operation logging for debugging
+
 **Component Registry** (src/registry.rs):
 
 - [ ] Component registration system
 - [ ] Built-in component auto-registration
 - [ ] Plugin discovery mechanism (optional)
 
-**Done when:** Working manifest parser with validation, type-safe component registration, 80%+ test coverage for core types.
+**Done when:** Working manifest parser with validation, type-safe component registration, error handling with recovery suggestions, 80%+ test coverage for core types.
 
 ### Phase 2: Built-in Components
 
-**Target Date:** April 25, 2026
+**Target:** Suite Milestone 2 (Month 4)
 
 **Goal:** Implement the four essential component types
 
@@ -125,7 +130,7 @@ All requirements, design, and test specifications are complete. Ready to start P
 
 ### Phase 3: Collection & Packaging
 
-**Target Date:** May 2, 2026
+**Target:** Suite Milestone 2–3
 
 **Goal:** Orchestrate components and create deployment packages
 
@@ -155,7 +160,7 @@ All requirements, design, and test specifications are complete. Ready to start P
 
 ### Phase 4: Installation Script Generation
 
-**Target Date:** May 9, 2026
+**Target:** Suite Milestone 3
 
 **Goal:** Generate platform-specific installation scripts
 
@@ -181,11 +186,21 @@ All requirements, design, and test specifications are complete. Ready to start P
 - [ ] Logging to install.log
 - [ ] Dry-run mode
 
-**Done when:** Working install script generation, scripts tested on all target platforms, script documentation.
+**Enhanced Installation Features:**
+
+- [ ] Optional component declaration (`required` field)
+- [ ] Component selection at prep time (`--include` flag)
+- [ ] Config file generation from templates (`[install.config]`)
+- [ ] Custom installation steps (`[install.steps]`)
+- [ ] Interactive and automatic installation modes (`MODE=automatic`)
+- [ ] Dependency declaration (`[install.dependencies]`)
+- [ ] Disk space verification before installation
+
+**Done when:** Working install script generation with component selection and config generation, scripts tested on all target platforms, script documentation.
 
 ### Phase 5: CLI Interface
 
-**Target Date:** May 16, 2026
+**Target:** Suite Milestone 3
 
 **Goal:** User-friendly command-line interface
 
@@ -217,7 +232,7 @@ All requirements, design, and test specifications are complete. Ready to start P
 
 ### Phase 6: Testing & Documentation
 
-**Target Date:** May 23, 2026 (MVP Complete)
+**Target:** Suite Milestone 3 (Month 6) — MVP Complete
 
 **Goal:** Comprehensive testing and documentation
 
@@ -301,36 +316,19 @@ Defer all of this until after shipping:
 - Network-based distribution (local packaging only)
 - Digital signatures/verification (future enhancement)
 - Automatic updates (contradicts air-gap philosophy)
-- SystemPackageComponent (defer to v0.2)
-- Plugin system (Phase 7 - defer to v0.2+)
-- Tests (partial - basic tests only)
-- Comprehensive documentation (minimal docs for MVP)
-
-Build it. Use it. Then improve it.
 
 ## After MVP
 
-**v0.2 - Enhanced Components:**
+**Enhanced Components:**
 - PythonAppComponent (pip, virtualenv)
 - NodeAppComponent (npm, package-lock.json)
 - GoAppComponent (go mod vendor)
 
-**v1.0 - Advanced Features:**
-- Delta updates (only changed files)
-- Multi-platform single package
-- Binary patching for updates
-
-**v1.1 - Enterprise Features:**
+**Enterprise Features:**
 - Digital signatures (GPG, Sigstore)
 - SBOM generation (Software Bill of Materials)
 - Compliance reporting
 - License scanning
-
-**v2.0 - Major Evolution:**
-- Full plugin system
-- GUI (Tauri-based)
-- Package repository format
-- Incremental syncing
 
 ## Key Documents
 
@@ -353,3 +351,4 @@ Build it. Use it. Then improve it.
 | Date | Activity |
 |------|----------|
 | 2026-01-28 | Created specification and documentation |
+| 2026-01-31 | Updated roadmap to align with 6-milestone release plan |
