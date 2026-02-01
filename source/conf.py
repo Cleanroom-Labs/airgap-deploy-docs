@@ -3,11 +3,17 @@
 import sys
 import os
 
-# Add cleanroom-theme submodule to path (local to this repo)
-sys.path.insert(0, os.path.abspath('cleanroom-theme'))
+# Add theme submodule to path
+sys.path.insert(0, os.path.abspath('theme'))
 
 # Import all shared settings
 from theme_config import *
+
+# Override paths for renamed theme directory (theme_config.py uses 'cleanroom-theme/')
+html_static_path = ['theme/sphinx/_static']
+templates_path = ['theme/sphinx/_templates']
+html_favicon = 'theme/sphinx/_static/favicon.ico'
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'theme']
 
 # -- Project information -----------------------------------------------------
 
