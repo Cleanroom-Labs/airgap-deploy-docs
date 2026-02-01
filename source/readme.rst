@@ -347,7 +347,7 @@ For large packages that exceed USB capacity, use AirGap Transfer:
    cd ~/deployment/ollama-deploy
    ./install.sh
 
-See `AirGap Transfer documentation <https://cleanroomlabs.dev/docs/airgap-transfer/readme.html>`_ for details.
+See `AirGap Transfer documentation <https://cleanroomlabs.dev/docs/transfer/readme.html>`_ for details.
 
 Platform Support
 ----------------
