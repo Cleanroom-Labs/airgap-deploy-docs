@@ -20,8 +20,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 project = 'AirGap Deploy'
 copyright = '2024, Cleanroom Labs'
 author = 'Cleanroom Labs'
-version = '0.1.0'
-release = '0.1.0'
+version = get_docs_version()
+release = get_docs_version()
 
 # -- Extensions configuration ------------------------------------------------
 
@@ -118,3 +118,4 @@ html_context = {
     'conf_py_path': '/source/',
 }
 setup_project_icon(project, html_context)
+setup_version_context(html_context)
