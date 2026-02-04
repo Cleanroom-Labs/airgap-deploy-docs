@@ -23,10 +23,10 @@ open build/html/index.html
 
 ```
 deploy/
-├── common/                        # Submodule: shared theme & build tools
+├── common/                        # Submodule: shared design system & build tools
 ├── source/
 │   ├── index.rst              # Main documentation entry
-│   ├── conf.py                # Sphinx configuration (imports shared theme)
+│   ├── conf.py                # Sphinx configuration (imports shared config)
 │   ├── readme.rst             # Project overview
 │   ├── roadmap.md             # Implementation roadmap
 │   ├── requirements/          # Software requirements
@@ -41,7 +41,7 @@ deploy/
 
 ## Shared Theme
 
-This documentation imports the shared Cleanroom Labs theme from the submodule at `common/`.
+This documentation imports shared Cleanroom Labs configuration and styling from the submodule at `common/`.
 
 ## Cross-Project References
 
