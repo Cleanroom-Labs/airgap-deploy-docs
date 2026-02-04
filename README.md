@@ -22,7 +22,8 @@ open build/html/index.html
 ## Project Structure
 
 ```
-airgap-deploy-docs/
+deploy/
+├── common/                        # Submodule: shared theme & build tools
 ├── source/
 │   ├── index.rst              # Main documentation entry
 │   ├── conf.py                # Sphinx configuration (imports shared theme)
@@ -33,14 +34,14 @@ airgap-deploy-docs/
 │   ├── testing/               # Test plans
 │   ├── use-cases/             # Use case documentation
 │   └── api/                   # API documentation
-├── requirements.txt           # Python dependencies
+├── requirements.txt           # References common/requirements.txt
 ├── Makefile                   # Build commands
 └── README.md                  # This file
 ```
 
 ## Shared Theme
 
-This documentation imports the shared Cleanroom Labs theme from the nested submodule at `source/cleanroom-theme/`.
+This documentation imports the shared Cleanroom Labs theme from the submodule at `common/`.
 
 ## Cross-Project References
 

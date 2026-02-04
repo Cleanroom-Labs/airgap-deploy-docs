@@ -1,1 +1,1 @@
--r theme/requirements.txt
+-r common/requirements.txt
