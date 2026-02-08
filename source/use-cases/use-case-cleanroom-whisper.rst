@@ -15,6 +15,7 @@ The workflow has two sides:
    :id: UC-DEPLOY-001
    :status: approved
    :tags: deploy, workflow, cleanroom-whisper
+   :release: v1.0
 
    Complete end-to-end workflow for packaging Cleanroom Whisper with AirGap Deploy and deploying to air-gapped systems.
 

@@ -105,6 +105,7 @@ Manifest Parsing (FR-1.x)
    :tags: deploy, manifest, parsing
    :tests: FR-DEPLOY-001
    :priority: high
+   :release: v1.0
 
    Verify valid AirGapDeploy.toml parses successfully
 
@@ -114,6 +115,7 @@ Manifest Parsing (FR-1.x)
    :tags: deploy, manifest, validation, error-handling
    :tests: FR-DEPLOY-002, FR-DEPLOY-004
    :priority: high
+   :release: v1.0
 
    Verify parse error when required field missing
 
@@ -123,6 +125,7 @@ Manifest Parsing (FR-1.x)
    :tags: deploy, manifest, validation, error-handling
    :tests: FR-DEPLOY-002, FR-DEPLOY-004
    :priority: high
+   :release: v1.0
 
    Verify parse error on type mismatch
 
@@ -132,6 +135,7 @@ Manifest Parsing (FR-1.x)
    :tags: deploy, manifest, validation, component
    :tests: FR-DEPLOY-002, FR-DEPLOY-004
    :priority: medium
+   :release: v1.0
 
    Verify validation error for unknown component type
 
@@ -141,6 +145,7 @@ Manifest Parsing (FR-1.x)
    :tags: deploy, manifest, versioning
    :tests: FR-DEPLOY-005
    :priority: low
+   :release: v1.0
 
    Verify warning for future schema version
 
@@ -153,6 +158,7 @@ RustAppComponent (FR-2.1 to FR-2.5)
    :tags: deploy, rust, vendor
    :tests: FR-DEPLOY-007, FR-DEPLOY-009
    :priority: high
+   :release: v1.0
 
    Verify cargo vendor and config generation
 
@@ -162,6 +168,7 @@ RustAppComponent (FR-2.1 to FR-2.5)
    :tags: deploy, rust, toolchain
    :tests: FR-DEPLOY-008
    :priority: medium
+   :release: v1.0
 
    Verify Rust installer download and inclusion
 
@@ -171,6 +178,7 @@ RustAppComponent (FR-2.1 to FR-2.5)
    :tags: deploy, rust, error-handling
    :tests: FR-DEPLOY-006, FR-DEPLOY-045
    :priority: medium
+   :release: v1.0
 
    Verify error when Cargo.toml not found
 
@@ -180,6 +188,7 @@ RustAppComponent (FR-2.1 to FR-2.5)
    :tags: deploy, rust, vendor, error-handling
    :tests: FR-DEPLOY-007, FR-DEPLOY-045
    :priority: medium
+   :release: v1.0
 
    Verify error handling for cargo vendor failures
 
@@ -192,6 +201,7 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
    :tags: deploy, git, clone
    :tests: FR-DEPLOY-011, FR-DEPLOY-012
    :priority: high
+   :release: v1.0
 
    Verify Git repository cloning with tag checkout
 
@@ -201,6 +211,7 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
    :tags: deploy, git, branch
    :tests: FR-DEPLOY-012
    :priority: high
+   :release: v1.0
 
    Verify Git branch checkout
 
@@ -210,6 +221,7 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
    :tags: deploy, git, error-handling
    :tests: FR-DEPLOY-011, FR-DEPLOY-045
    :priority: medium
+   :release: v1.0
 
    Verify error for invalid repository URL
 
@@ -219,6 +231,7 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
    :tags: deploy, git, network, reliability
    :tests: NFR-DEPLOY-006, FR-DEPLOY-045
    :priority: high
+   :release: v1.0
 
    Verify retry logic for network failures
 
@@ -231,6 +244,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, download
    :tests: FR-DEPLOY-015, FR-DEPLOY-016
    :priority: high
+   :release: v1.0
 
    Verify model file download with checksum verification
 
@@ -240,6 +254,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, verification, security
    :tests: FR-DEPLOY-016, NFR-DEPLOY-005
    :priority: high
+   :release: v1.0
 
    Verify checksum verification passes for matching checksum
 
@@ -249,6 +264,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, verification, security, error-handling
    :tests: FR-DEPLOY-016, NFR-DEPLOY-005, FR-DEPLOY-045
    :priority: high
+   :release: v1.0
 
    Verify error and file deletion on checksum mismatch
 
@@ -258,6 +274,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, download, reliability
    :tests: FR-DEPLOY-018
    :priority: medium
+   :release: v1.0
 
    Verify download resume capability
 
@@ -267,6 +284,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, download, performance
    :tests: FR-DEPLOY-017, NFR-DEPLOY-002
    :priority: high
+   :release: v1.0
 
    Verify large file download with progress display
 
@@ -276,6 +294,7 @@ ModelFileComponent (FR-2.10 to FR-2.14)
    :tags: deploy, model, cache, performance
    :tests: FR-DEPLOY-016
    :priority: medium
+   :release: v1.0
 
    Verify cached file reuse
 
@@ -288,6 +307,7 @@ Packaging (FR-3.1 to FR-3.6)
    :tags: deploy, packaging, archive, linux, macos
    :tests: FR-DEPLOY-024, FR-DEPLOY-026
    :priority: high
+   :release: v1.0
 
    Verify tar.gz archive creation with correct structure
 
@@ -297,6 +317,7 @@ Packaging (FR-3.1 to FR-3.6)
    :tags: deploy, packaging, archive, windows
    :tests: FR-DEPLOY-025, FR-DEPLOY-026
    :priority: high
+   :release: v1.0
 
    Verify zip archive creation for Windows
 
@@ -306,6 +327,7 @@ Packaging (FR-3.1 to FR-3.6)
    :tags: deploy, packaging, metadata
    :tests: FR-DEPLOY-027
    :priority: high
+   :release: v1.0
 
    Verify metadata file generation
 
@@ -315,6 +337,7 @@ Packaging (FR-3.1 to FR-3.6)
    :tags: deploy, packaging, checksum, security
    :tests: FR-DEPLOY-028, NFR-DEPLOY-005
    :priority: high
+   :release: v1.0
 
    Verify package checksum generation
 
@@ -324,6 +347,7 @@ Packaging (FR-3.1 to FR-3.6)
    :tags: deploy, packaging, performance, scalability
    :tests: NFR-DEPLOY-026
    :priority: medium
+   :release: v1.0
 
    Verify large package creation with stable memory usage
 
@@ -336,6 +360,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, bash, linux, macos
    :tests: FR-DEPLOY-030, FR-DEPLOY-032
    :priority: high
+   :release: v1.0
 
    Verify Bash installation script generation
 
@@ -345,6 +370,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, powershell, windows
    :tests: FR-DEPLOY-031, FR-DEPLOY-032
    :priority: high
+   :release: v1.0
 
    Verify PowerShell installation script generation
 
@@ -354,6 +380,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, interactive
    :tests: FR-DEPLOY-033
    :priority: high
+   :release: v1.0
 
    Verify interactive mode prompts user
 
@@ -363,6 +390,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, automatic
    :tests: FR-DEPLOY-033
    :priority: high
+   :release: v1.0
 
    Verify automatic unattended installation
 
@@ -372,6 +400,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, dependencies
    :tests: FR-DEPLOY-032
    :priority: high
+   :release: v1.0
 
    Verify dependency check passes when all present
 
@@ -381,6 +410,7 @@ Install Script Generation (FR-4.1 to FR-4.7)
    :tags: deploy, installation, dependencies, error-handling
    :tests: FR-DEPLOY-032, FR-DEPLOY-036
    :priority: high
+   :release: v1.0
 
    Verify clear error message for missing dependencies
 
@@ -393,6 +423,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, prep
    :tests: FR-DEPLOY-037
    :priority: high
+   :release: v1.0
 
    Verify prep command with default manifest
 
@@ -402,6 +433,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, prep
    :tests: FR-DEPLOY-037
    :priority: high
+   :release: v1.0
 
    Verify prep command with custom manifest path
 
@@ -411,6 +443,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, prep, dry-run
    :tests: FR-DEPLOY-037
    :priority: medium
+   :release: v1.0
 
    Verify dry run mode shows plan without executing
 
@@ -420,6 +453,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, validate
    :tests: FR-DEPLOY-037
    :priority: high
+   :release: v1.0
 
    Verify validate command checks manifest
 
@@ -429,6 +463,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, init
    :tests: FR-DEPLOY-037
    :priority: medium
+   :release: v1.0
 
    Verify init command creates template
 
@@ -438,6 +473,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, list
    :tests: FR-DEPLOY-037
    :priority: low
+   :release: v1.0
 
    Verify list-components command displays available types
 
@@ -447,6 +483,7 @@ CLI Interface (FR-5.1 to FR-5.5)
    :tags: deploy, cli, help
    :tests: FR-DEPLOY-041
    :priority: high
+   :release: v1.0
 
    Verify --help flag displays usage information
 
@@ -459,6 +496,7 @@ Error Handling (FR-7.1 to FR-7.4)
    :tags: deploy, error-handling, network, reliability
    :tests: NFR-DEPLOY-006, FR-DEPLOY-046
    :priority: high
+   :release: v1.0
 
    Verify retry logic for network errors
 
@@ -468,6 +506,7 @@ Error Handling (FR-7.1 to FR-7.4)
    :tags: deploy, error-handling, disk-space
    :tests: FR-DEPLOY-035, FR-DEPLOY-045
    :priority: high
+   :release: v1.0
 
    Verify clear error for insufficient disk space
 
@@ -477,6 +516,7 @@ Error Handling (FR-7.1 to FR-7.4)
    :tags: deploy, error-handling, permissions
    :tests: FR-DEPLOY-045
    :priority: medium
+   :release: v1.0
 
    Verify clear error for permission issues
 
@@ -486,6 +526,7 @@ Error Handling (FR-7.1 to FR-7.4)
    :tags: deploy, error-handling, platform
    :tests: FR-DEPLOY-045
    :priority: medium
+   :release: v1.0
 
    Verify error for invalid platform target
 
@@ -498,6 +539,7 @@ End-to-End Workflows
    :tags: deploy, e2e, cleanroom-whisper, system
    :tests: UC-DEPLOY-001
    :priority: critical
+   :release: v1.0
 
    Verify complete Cleanroom Whisper deployment workflow from package creation to functional installation on air-gapped system
 
@@ -507,6 +549,7 @@ End-to-End Workflows
    :tags: deploy, e2e, ollama, large-package, system
    :tests: UC-DEPLOY-002, NFR-DEPLOY-026
    :priority: high
+   :release: v1.0
 
    Verify Ollama deployment with multiple large models (20GB+ total)
 
@@ -516,6 +559,7 @@ End-to-End Workflows
    :tags: deploy, e2e, multi-platform, portability
    :tests: NFR-DEPLOY-017, NFR-DEPLOY-018, NFR-DEPLOY-019
    :priority: high
+   :release: v1.0
 
    Verify same manifest builds packages for all platforms
 
@@ -528,6 +572,7 @@ Performance Tests
    :tags: deploy, performance, packaging
    :tests: NFR-DEPLOY-001
    :priority: medium
+   :release: v1.0
 
    Verify package preparation completes within 5 minutes for typical applications
 
@@ -537,6 +582,7 @@ Performance Tests
    :tags: deploy, performance, download, memory
    :tests: NFR-DEPLOY-002
    :priority: high
+   :release: v1.0
 
    Verify large model download with progress display and low memory usage
 
@@ -546,6 +592,7 @@ Performance Tests
    :tags: deploy, performance, parallelism
    :tests: NFR-DEPLOY-003
    :priority: medium
+   :release: v1.0
 
    Verify parallel collection improves performance
 
@@ -555,6 +602,7 @@ Performance Tests
    :tags: deploy, performance, installation
    :tests: NFR-DEPLOY-004
    :priority: medium
+   :release: v1.0
 
    Verify installation completes within 20 minutes
 
@@ -567,6 +615,7 @@ Security Tests
    :tags: deploy, security, checksum, verification
    :tests: NFR-DEPLOY-021
    :priority: critical
+   :release: v1.0
 
    Verify checksum verification detects corrupted files
 
@@ -576,6 +625,7 @@ Security Tests
    :tags: deploy, security, code-execution
    :tests: NFR-DEPLOY-022
    :priority: critical
+   :release: v1.0
 
    Verify manifest cannot execute arbitrary code during prep phase
 
@@ -585,6 +635,7 @@ Security Tests
    :tags: deploy, security, network, https
    :tests: NFR-DEPLOY-024
    :priority: high
+   :release: v1.0
 
    Verify all downloads use HTTPS
 
@@ -594,6 +645,7 @@ Security Tests
    :tags: deploy, security, permissions, filesystem
    :tests: NFR-DEPLOY-025
    :priority: high
+   :release: v1.0
 
    Verify temporary files have restrictive permissions
 
@@ -606,6 +658,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, components, configuration
    :tests: FR-DEPLOY-062
    :priority: medium
+   :release: v1.0
 
    Verify manifest supports required=false for optional components
 
@@ -615,6 +668,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, cli, components
    :tests: FR-DEPLOY-063
    :priority: medium
+   :release: v1.0
 
    Verify --include flag selects optional components during prep
 
@@ -624,6 +678,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, configuration
    :tests: FR-DEPLOY-064
    :priority: high
+   :release: v1.0
 
    Verify install script generates config file from template with variable substitution
 
@@ -633,6 +688,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, configuration
    :tests: FR-DEPLOY-065
    :priority: high
+   :release: v1.0
 
    Verify [install.config] section supports config_file and config_template fields
 
@@ -642,6 +698,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, customization
    :tests: FR-DEPLOY-066
    :priority: high
+   :release: v1.0
 
    Verify [install.steps] section commands execute in correct order
 
@@ -651,6 +708,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, usability
    :tests: FR-DEPLOY-067
    :priority: medium
+   :release: v1.0
 
    Verify install script prompts user in interactive mode
 
@@ -660,6 +718,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, automation
    :tests: FR-DEPLOY-068
    :priority: high
+   :release: v1.0
 
    Verify install script runs without prompts when MODE=automatic
 
@@ -669,6 +728,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, installation, usability
    :tests: FR-DEPLOY-069
    :priority: low
+   :release: v1.0
 
    Verify [install.prompts] section configures interactive prompts
 
@@ -678,6 +738,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, dependencies, configuration
    :tests: FR-DEPLOY-070
    :priority: medium
+   :release: v1.0
 
    Verify [install.dependencies] section declares required tools
 
@@ -687,6 +748,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, dependencies, installation
    :tests: FR-DEPLOY-071
    :priority: high
+   :release: v1.0
 
    Verify install script checks for required dependencies and fails early if missing
 
@@ -696,6 +758,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, dependencies, installation
    :tests: FR-DEPLOY-072
    :priority: medium
+   :release: v1.0
 
    Verify install script checks available disk space before installation
 
@@ -705,6 +768,7 @@ Enhanced Installation Feature Tests
    :tags: deploy, portability, installation
    :tests: NFR-DEPLOY-029
    :priority: high
+   :release: v1.0
 
    Verify install script uses platform-specific default paths on Linux, macOS, Windows
 
@@ -717,6 +781,7 @@ Component Configuration Tests
    :tags: deploy, rust, configuration
    :tests: FR-DEPLOY-010
    :priority: high
+   :release: v1.0
 
    Verify Rust component supports source, vendor, include_toolchain, prebuild config options
 
@@ -726,6 +791,7 @@ Component Configuration Tests
    :tags: deploy, external-binary, configuration
    :tests: FR-DEPLOY-014
    :priority: high
+   :release: v1.0
 
    Verify external binary supports name, repo, branch/tag/commit, build_instructions config options
 
@@ -735,6 +801,7 @@ Component Configuration Tests
    :tags: deploy, model, configuration
    :tests: FR-DEPLOY-019
    :priority: high
+   :release: v1.0
 
    Verify model file supports name, url, checksum, required, install_path config options
 
@@ -747,6 +814,7 @@ System Package Component Tests
    :tags: deploy, system-package, linux
    :tests: FR-DEPLOY-020
    :priority: medium
+   :release: v1.0
 
    Verify system detects Linux distribution (Debian, Fedora, Arch)
 
@@ -756,6 +824,7 @@ System Package Component Tests
    :tags: deploy, system-package, installation
    :tests: FR-DEPLOY-023
    :priority: medium
+   :release: v1.0
 
    Verify install scripts configure system package installation commands
 
@@ -768,6 +837,7 @@ Installation Detection Tests
    :tags: deploy, installation, upgrade
    :tests: FR-DEPLOY-034
    :priority: high
+   :release: v1.0
 
    Verify install script detects existing installation and offers upgrade path
 
@@ -780,6 +850,7 @@ CLI Feature Tests
    :tags: deploy, cli, ui
    :tests: FR-DEPLOY-038
    :priority: medium
+   :release: v1.0
 
    Verify CLI displays colored output using ANSI codes
 
@@ -789,6 +860,7 @@ CLI Feature Tests
    :tags: deploy, cli, ui, progress
    :tests: FR-DEPLOY-039, FR-DEPLOY-050
    :priority: high
+   :release: v1.0
 
    Verify progress bars display for downloads and compression operations
 
@@ -798,6 +870,7 @@ CLI Feature Tests
    :tags: deploy, cli, logging
    :tests: FR-DEPLOY-040, FR-DEPLOY-048
    :priority: high
+   :release: v1.0
 
    Verify --verbose flag enables detailed operation logging
 
@@ -810,6 +883,7 @@ Configuration Management Tests
    :tags: deploy, configuration
    :tests: FR-DEPLOY-042
    :priority: medium
+   :release: v1.0
 
    Verify system reads configuration from ~/.airgap-deploy/config.toml
 
@@ -819,6 +893,7 @@ Configuration Management Tests
    :tags: deploy, configuration
    :tests: FR-DEPLOY-043
    :priority: medium
+   :release: v1.0
 
    Verify global config supports default_target, cache_dir, proxy options
 
@@ -828,6 +903,7 @@ Configuration Management Tests
    :tags: deploy, configuration, cli
    :tests: FR-DEPLOY-044
    :priority: high
+   :release: v1.0
 
    Verify command-line arguments override global configuration values
 
@@ -840,6 +916,7 @@ Error Handling Tests
    :tags: deploy, error-handling, cli
    :tests: FR-DEPLOY-047
    :priority: high
+   :release: v1.0
 
    Verify system exits with non-zero status codes on errors
 
@@ -849,6 +926,7 @@ Error Handling Tests
    :tags: deploy, logging, debugging
    :tests: FR-DEPLOY-048
    :priority: medium
+   :release: v1.0
 
    Verify all operations are logged to enable debugging
 
@@ -861,6 +939,7 @@ External Interface Tests
    :tags: deploy, external-interface, ui, cli
    :tests: FR-DEPLOY-049
    :priority: medium
+   :release: v1.0
 
    Verify CLI provides ANSI color support for terminal output
 
@@ -870,6 +949,7 @@ External Interface Tests
    :tags: deploy, external-interface, ui, installation
    :tests: FR-DEPLOY-051
    :priority: high
+   :release: v1.0
 
    Verify generated install scripts provide interactive prompts
 
@@ -879,6 +959,7 @@ External Interface Tests
    :tags: deploy, external-interface, hardware, filesystem
    :tests: FR-DEPLOY-052
    :priority: low
+   :release: v1.0
 
    Verify system uses standard filesystem I/O operations
 
@@ -888,6 +969,7 @@ External Interface Tests
    :tags: deploy, external-interface, hardware, network
    :tests: FR-DEPLOY-053, FR-DEPLOY-060
    :priority: medium
+   :release: v1.0
 
    Verify system uses network interface for component downloads during prep phase
 
@@ -897,6 +979,7 @@ External Interface Tests
    :tags: deploy, external-interface, hardware, usb
    :tests: FR-DEPLOY-054
    :priority: medium
+   :release: v1.0
 
    Verify packages can be transferred via removable media (USB drives)
 
@@ -906,6 +989,7 @@ External Interface Tests
    :tags: deploy, external-interface, software, cargo, rust
    :tests: FR-DEPLOY-055
    :priority: high
+   :release: v1.0
 
    Verify integration with cargo for Rust dependency vendoring
 
@@ -915,6 +999,7 @@ External Interface Tests
    :tags: deploy, external-interface, software, git
    :tests: FR-DEPLOY-056
    :priority: high
+   :release: v1.0
 
    Verify integration with git for repository cloning
 
@@ -924,6 +1009,7 @@ External Interface Tests
    :tags: deploy, external-interface, software, http
    :tests: FR-DEPLOY-057
    :priority: high
+   :release: v1.0
 
    Verify HTTP/HTTPS clients download models and packages
 
@@ -933,6 +1019,7 @@ External Interface Tests
    :tags: deploy, external-interface, software, package-manager
    :tests: FR-DEPLOY-058
    :priority: medium
+   :release: v1.0
 
    Verify integration with apt, dnf, pacman for system packages
 
@@ -942,6 +1029,7 @@ External Interface Tests
    :tags: deploy, external-interface, software, airgap-transfer
    :tests: FR-DEPLOY-059
    :priority: low
+   :release: v1.0
 
    Verify workflow-level integration with AirGap Transfer for large packages
 
@@ -951,6 +1039,7 @@ External Interface Tests
    :tags: deploy, external-interface, communications, air-gap, offline
    :tests: FR-DEPLOY-061
    :priority: critical
+   :release: v1.0
 
    Verify installation phase uses no network communication (enforced by air-gap)
 
@@ -963,6 +1052,7 @@ Reliability NFR Tests
    :tags: deploy, reliability, installation
    :tests: NFR-DEPLOY-007
    :priority: high
+   :release: v1.0
 
    Verify install scripts can be run multiple times safely without side effects
 
@@ -972,6 +1062,7 @@ Reliability NFR Tests
    :tags: deploy, reliability, error-handling
    :tests: NFR-DEPLOY-008
    :priority: high
+   :release: v1.0
 
    Verify system handles Ctrl+C and system shutdown gracefully
 
@@ -984,6 +1075,7 @@ Usability NFR Tests
    :tags: deploy, usability
    :tests: NFR-DEPLOY-009
    :priority: medium
+   :release: v1.0
 
    Verify first-time users can create deployment package within 10 minutes using examples
 
@@ -993,6 +1085,7 @@ Usability NFR Tests
    :tags: deploy, usability, error-handling
    :tests: NFR-DEPLOY-010
    :priority: high
+   :release: v1.0
 
    Verify error messages include specific details and suggested fixes
 
@@ -1002,6 +1095,7 @@ Usability NFR Tests
    :tags: deploy, usability, cli, help
    :tests: NFR-DEPLOY-011
    :priority: high
+   :release: v1.0
 
    Verify CLI provides help text via --help for all commands
 
@@ -1011,6 +1105,7 @@ Usability NFR Tests
    :tags: deploy, usability, ui
    :tests: NFR-DEPLOY-012
    :priority: medium
+   :release: v1.0
 
    Verify progress indicators show for operations taking longer than 2 seconds
 
@@ -1023,6 +1118,7 @@ Maintainability NFR Tests
    :tags: deploy, maintainability, testing
    :tests: NFR-DEPLOY-013
    :priority: high
+   :release: v1.0
 
    Verify codebase achieves at least 80% test coverage
 
@@ -1032,6 +1128,7 @@ Maintainability NFR Tests
    :tags: deploy, maintainability, documentation
    :tests: NFR-DEPLOY-014
    :priority: high
+   :release: v1.0
 
    Verify all public APIs have rustdoc documentation
 
@@ -1041,6 +1138,7 @@ Maintainability NFR Tests
    :tags: deploy, maintainability, code-quality
    :tests: NFR-DEPLOY-015
    :priority: high
+   :release: v1.0
 
    Verify code passes cargo clippy with zero warnings
 
@@ -1050,6 +1148,7 @@ Maintainability NFR Tests
    :tags: deploy, maintainability, code-quality
    :tests: NFR-DEPLOY-016
    :priority: high
+   :release: v1.0
 
    Verify code is formatted with rustfmt
 
@@ -1062,6 +1161,7 @@ Portability NFR Tests
    :tags: deploy, portability, installation
    :tests: NFR-DEPLOY-020
    :priority: high
+   :release: v1.0
 
    Verify install scripts are compatible with Bash 4.0+ and PowerShell 5.1+
 
@@ -1074,6 +1174,7 @@ Security NFR Tests
    :tags: deploy, security, installation
    :tests: NFR-DEPLOY-023
    :priority: critical
+   :release: v1.0
 
    Verify install scripts require explicit confirmation before destructive operations
 
@@ -1086,6 +1187,7 @@ Scalability NFR Tests
    :tags: deploy, scalability
    :tests: NFR-DEPLOY-027
    :priority: medium
+   :release: v1.0
 
    Verify system supports manifests with up to 100 components
 
@@ -1095,6 +1197,7 @@ Scalability NFR Tests
    :tags: deploy, scalability, performance
    :tests: NFR-DEPLOY-028
    :priority: medium
+   :release: v1.0
 
    Verify parallel collection scales with available CPU cores
 

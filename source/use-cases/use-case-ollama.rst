@@ -10,6 +10,7 @@ Deploy Ollama (LLM runtime) and models to an air-gapped production system for lo
    :id: UC-DEPLOY-002
    :status: approved
    :tags: deploy, workflow, ollama, llm
+   :release: v1.0
 
    Deploy Ollama runtime and LLM models to air-gapped production system for local AI inference without internet connectivity.
 
