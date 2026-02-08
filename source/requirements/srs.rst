@@ -208,6 +208,7 @@ Manifest Parsing and Validation
    :status: approved
    :tags: deploy, manifest, parsing
    :priority: must
+   :release: v1.0
 
    The system SHALL parse AirGapDeploy.toml files using TOML syntax.
 
@@ -216,6 +217,7 @@ Manifest Parsing and Validation
    :status: approved
    :tags: deploy, manifest, validation
    :priority: must
+   :release: v1.0
 
    The system SHALL validate manifest structure and required fields before processing.
 
@@ -224,6 +226,7 @@ Manifest Parsing and Validation
    :status: approved
    :tags: deploy, manifest, structure
    :priority: must
+   :release: v1.0
 
    The system SHALL support the following manifest sections: ``[package]``, ``[targets]``, ``[install]``, ``[[components]]``
 
@@ -232,6 +235,7 @@ Manifest Parsing and Validation
    :status: approved
    :tags: deploy, manifest, validation, error-handling
    :priority: must
+   :release: v1.0
 
    The system SHALL provide clear error messages for invalid manifests, including line numbers and expected values.
 
@@ -240,6 +244,7 @@ Manifest Parsing and Validation
    :status: approved
    :tags: deploy, manifest, versioning
    :priority: should
+   :release: v1.0
 
    The system SHALL support schema versioning to enable future manifest evolution.
 
@@ -254,6 +259,7 @@ Rust Application Component
    :status: approved
    :tags: deploy, rust, component
    :priority: must
+   :release: v1.0
 
    The system SHALL collect Rust application source code from local directories.
 
@@ -262,6 +268,7 @@ Rust Application Component
    :status: approved
    :tags: deploy, rust, vendor, dependencies
    :priority: must
+   :release: v1.0
 
    The system SHALL execute cargo vendor to download and vendor all Cargo dependencies.
 
@@ -270,6 +277,7 @@ Rust Application Component
    :status: approved
    :tags: deploy, rust, toolchain
    :priority: should
+   :release: v1.0
 
    The system SHALL optionally include Rust toolchain installer for offline builds.
 
@@ -278,6 +286,7 @@ Rust Application Component
    :status: approved
    :tags: deploy, rust, configuration
    :priority: must
+   :release: v1.0
 
    The system SHALL generate .cargo/config.toml to configure vendored dependency usage.
 
@@ -286,6 +295,7 @@ Rust Application Component
    :status: approved
    :tags: deploy, rust, configuration
    :priority: must
+   :release: v1.0
 
    The system SHALL support configuration options: source, vendor, include_toolchain, prebuild
 
@@ -297,6 +307,7 @@ External Binary Component
    :status: approved
    :tags: deploy, git, external-binary
    :priority: must
+   :release: v1.0
 
    The system SHALL clone Git repositories for external binaries.
 
@@ -305,6 +316,7 @@ External Binary Component
    :status: approved
    :tags: deploy, git, versioning
    :priority: must
+   :release: v1.0
 
    The system SHALL support specifying Git branch, tag, or commit.
 
@@ -313,6 +325,7 @@ External Binary Component
    :status: approved
    :tags: deploy, installation, build
    :priority: must
+   :release: v1.0
 
    The system SHALL include build instructions in installation scripts.
 
@@ -321,6 +334,7 @@ External Binary Component
    :status: approved
    :tags: deploy, external-binary, configuration
    :priority: must
+   :release: v1.0
 
    The system SHALL support configuration options: name, repo, branch/tag/commit, build_instructions
 
@@ -332,6 +346,7 @@ Model File Component
    :status: approved
    :tags: deploy, model, download
    :priority: must
+   :release: v1.0
 
    The system SHALL download model files from HTTP/HTTPS URLs.
 
@@ -340,6 +355,7 @@ Model File Component
    :status: approved
    :tags: deploy, model, verification, security
    :priority: must
+   :release: v1.0
 
    The system SHALL verify downloaded files using SHA-256 checksums.
 
@@ -348,6 +364,7 @@ Model File Component
    :status: approved
    :tags: deploy, model, download, ui
    :priority: must
+   :release: v1.0
 
    The system SHALL display download progress with progress bars.
 
@@ -356,6 +373,7 @@ Model File Component
    :status: approved
    :tags: deploy, model, download, reliability
    :priority: should
+   :release: v1.0
 
    The system SHALL support resume capability for interrupted downloads.
 
@@ -364,6 +382,7 @@ Model File Component
    :status: approved
    :tags: deploy, model, configuration
    :priority: must
+   :release: v1.0
 
    The system SHALL support configuration options: name, url, checksum, required, install_path
 
@@ -375,6 +394,7 @@ System Package Component
    :status: approved
    :tags: deploy, system-package, linux
    :priority: could
+   :release: v1.0
 
    The system SHALL detect Linux distribution (Debian, Fedora, Arch).
 
@@ -383,6 +403,7 @@ System Package Component
    :status: approved
    :tags: deploy, system-package, dependencies
    :priority: could
+   :release: v1.0
 
    The system SHALL download system packages (.deb, .rpm, etc.) with dependencies.
 
@@ -391,6 +412,7 @@ System Package Component
    :status: approved
    :tags: deploy, system-package, packaging
    :priority: could
+   :release: v1.0
 
    The system SHALL include system packages in deployment archive.
 
@@ -399,6 +421,7 @@ System Package Component
    :status: approved
    :tags: deploy, system-package, installation
    :priority: could
+   :release: v1.0
 
    The system SHALL configure installation scripts to install system packages.
 
@@ -412,6 +435,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, archive
    :priority: must
+   :release: v1.0
 
    The system SHALL create tar.gz archives for Linux and macOS deployments.
 
@@ -420,6 +444,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, archive, windows
    :priority: must
+   :release: v1.0
 
    The system SHALL create zip archives for Windows deployments.
 
@@ -428,6 +453,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, structure
    :priority: must
+   :release: v1.0
 
    The system SHALL organize package contents with standardized directory structure.
 
@@ -436,6 +462,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, metadata
    :priority: must
+   :release: v1.0
 
    The system SHALL generate airgap-deploy-metadata.json with package information.
 
@@ -444,6 +471,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, verification, security
    :priority: must
+   :release: v1.0
 
    The system SHALL generate SHA-256 checksum for the entire package.
 
@@ -452,6 +480,7 @@ Packaging
    :status: approved
    :tags: deploy, packaging, compression
    :priority: should
+   :release: v1.0
 
    The system SHALL support configurable compression levels.
 
@@ -463,6 +492,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, bash, linux, macos
    :priority: must
+   :release: v1.0
 
    The system SHALL generate Bash installation scripts (install.sh) for Linux/macOS.
 
@@ -471,6 +501,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, powershell, windows
    :priority: must
+   :release: v1.0
 
    The system SHALL generate PowerShell installation scripts (install.ps1) for Windows.
 
@@ -479,6 +510,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, workflow
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL perform dependency checks, display plan, prompt for location, execute builds, configure files, set permissions, and log actions.
 
@@ -487,6 +519,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, modes
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL support interactive mode and automatic (unattended) mode.
 
@@ -495,6 +528,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, upgrade
    :priority: should
+   :release: v1.0
 
    Installation scripts SHALL detect existing installations and offer upgrade path.
 
@@ -503,6 +537,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, validation
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL verify sufficient disk space before proceeding.
 
@@ -511,6 +546,7 @@ Installation Script Generation
    :status: approved
    :tags: deploy, installation, error-handling
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL provide clear error messages and recovery instructions.
 
@@ -522,6 +558,7 @@ Command-Line Interface
    :status: approved
    :tags: deploy, cli, commands
    :priority: must
+   :release: v1.0
 
    The system SHALL provide commands: prep, validate, init, list-components with appropriate arguments.
 
@@ -530,6 +567,7 @@ Command-Line Interface
    :status: approved
    :tags: deploy, cli, ui
    :priority: should
+   :release: v1.0
 
    The system SHALL display colored output for improved readability.
 
@@ -538,6 +576,7 @@ Command-Line Interface
    :status: approved
    :tags: deploy, cli, ui, progress
    :priority: must
+   :release: v1.0
 
    The system SHALL display progress bars for long-running operations (downloads, compression).
 
@@ -546,6 +585,7 @@ Command-Line Interface
    :status: approved
    :tags: deploy, cli, logging
    :priority: must
+   :release: v1.0
 
    The system SHALL support --verbose flag for detailed logging.
 
@@ -554,6 +594,7 @@ Command-Line Interface
    :status: approved
    :tags: deploy, cli, help
    :priority: must
+   :release: v1.0
 
    The system SHALL support --help flag for all commands.
 
@@ -565,6 +606,7 @@ Configuration Management
    :status: approved
    :tags: deploy, configuration
    :priority: should
+   :release: v1.0
 
    The system SHALL support global configuration file at ~/.airgap-deploy/config.toml.
 
@@ -573,6 +615,7 @@ Configuration Management
    :status: approved
    :tags: deploy, configuration
    :priority: should
+   :release: v1.0
 
    The system SHALL support global configuration options: default_target, cache_dir, proxy.
 
@@ -581,6 +624,7 @@ Configuration Management
    :status: approved
    :tags: deploy, configuration, cli
    :priority: must
+   :release: v1.0
 
    Command-line arguments SHALL override global configuration.
 
@@ -592,6 +636,7 @@ Error Handling and Recovery
    :status: approved
    :tags: deploy, error-handling
    :priority: must
+   :release: v1.0
 
    The system SHALL provide clear, actionable error messages for all failure modes.
 
@@ -600,6 +645,7 @@ Error Handling and Recovery
    :status: approved
    :tags: deploy, error-handling, recovery
    :priority: should
+   :release: v1.0
 
    The system SHALL suggest recovery steps for common errors: missing dependencies, network failures, disk space issues, invalid manifests.
 
@@ -608,6 +654,7 @@ Error Handling and Recovery
    :status: approved
    :tags: deploy, error-handling, cli
    :priority: must
+   :release: v1.0
 
    The system SHALL exit with non-zero status codes on errors.
 
@@ -616,6 +663,7 @@ Error Handling and Recovery
    :status: approved
    :tags: deploy, logging, debugging
    :priority: must
+   :release: v1.0
 
    The system SHALL log all operations to enable debugging.
 
@@ -630,6 +678,7 @@ Performance
    :status: approved
    :tags: deploy, performance
    :priority: should
+   :release: v1.0
 
    Package preparation SHALL complete in less than 5 minutes for typical applications (<1GB components).
 
@@ -638,6 +687,7 @@ Performance
    :status: approved
    :tags: deploy, performance, download
    :priority: must
+   :release: v1.0
 
    Large model downloads (1-10GB) SHALL display progress and support resume.
 
@@ -646,6 +696,7 @@ Performance
    :status: approved
    :tags: deploy, performance, parallelism
    :priority: should
+   :release: v1.0
 
    Parallel component collection SHALL be used where possible to reduce preparation time.
 
@@ -654,6 +705,7 @@ Performance
    :status: approved
    :tags: deploy, performance, installation
    :priority: should
+   :release: v1.0
 
    Installation scripts SHALL complete in less than 20 minutes for typical applications (including build time).
 
@@ -665,6 +717,7 @@ Reliability
    :status: approved
    :tags: deploy, reliability, security, verification
    :priority: must
+   :release: v1.0
 
    The system SHALL verify all downloaded files using SHA-256 checksums.
 
@@ -673,6 +726,7 @@ Reliability
    :status: approved
    :tags: deploy, reliability, network
    :priority: must
+   :release: v1.0
 
    The system SHALL retry failed network operations up to 3 times with exponential backoff.
 
@@ -681,6 +735,7 @@ Reliability
    :status: approved
    :tags: deploy, reliability, installation
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL be idempotent (safe to run multiple times).
 
@@ -689,6 +744,7 @@ Reliability
    :status: approved
    :tags: deploy, reliability, error-handling
    :priority: must
+   :release: v1.0
 
    The system SHALL handle interruptions gracefully (Ctrl+C, system shutdown).
 
@@ -700,6 +756,7 @@ Usability
    :status: approved
    :tags: deploy, usability
    :priority: should
+   :release: v1.0
 
    First-time users SHALL be able to create a deployment package within 10 minutes using provided examples.
 
@@ -708,6 +765,7 @@ Usability
    :status: approved
    :tags: deploy, usability, error-handling
    :priority: must
+   :release: v1.0
 
    Error messages SHALL include specific details about the failure and suggested fixes.
 
@@ -716,6 +774,7 @@ Usability
    :status: approved
    :tags: deploy, usability, cli, help
    :priority: must
+   :release: v1.0
 
    The CLI SHALL provide help text accessible via --help for all commands.
 
@@ -724,6 +783,7 @@ Usability
    :status: approved
    :tags: deploy, usability, ui
    :priority: must
+   :release: v1.0
 
    Progress indicators SHALL be shown for all operations taking longer than 2 seconds.
 
@@ -735,6 +795,7 @@ Maintainability
    :status: approved
    :tags: deploy, maintainability, testing
    :priority: must
+   :release: v1.0
 
    The codebase SHALL achieve at least 80% test coverage.
 
@@ -743,6 +804,7 @@ Maintainability
    :status: approved
    :tags: deploy, maintainability, documentation
    :priority: must
+   :release: v1.0
 
    All public APIs SHALL have rustdoc documentation.
 
@@ -751,6 +813,7 @@ Maintainability
    :status: approved
    :tags: deploy, maintainability, code-quality
    :priority: must
+   :release: v1.0
 
    The code SHALL pass cargo clippy with zero warnings.
 
@@ -759,6 +822,7 @@ Maintainability
    :status: approved
    :tags: deploy, maintainability, code-quality
    :priority: must
+   :release: v1.0
 
    The code SHALL be formatted with rustfmt.
 
@@ -770,6 +834,7 @@ Portability
    :status: approved
    :tags: deploy, portability, linux
    :priority: must
+   :release: v1.0
 
    The system SHALL run on Linux (Ubuntu 20.04+, Fedora 35+, Debian 11+).
 
@@ -778,6 +843,7 @@ Portability
    :status: approved
    :tags: deploy, portability, macos
    :priority: must
+   :release: v1.0
 
    The system SHALL run on macOS (10.15+, both Intel and Apple Silicon).
 
@@ -786,6 +852,7 @@ Portability
    :status: approved
    :tags: deploy, portability, windows
    :priority: must
+   :release: v1.0
 
    The system SHALL run on Windows (Windows 10/11).
 
@@ -794,6 +861,7 @@ Portability
    :status: approved
    :tags: deploy, portability, installation
    :priority: must
+   :release: v1.0
 
    Generated installation scripts SHALL be compatible with Bash 4.0+ (Linux/macOS) and PowerShell 5.1+ (Windows).
 
@@ -805,6 +873,7 @@ Security
    :status: approved
    :tags: deploy, security, verification
    :priority: must
+   :release: v1.0
 
    The system SHALL verify checksums for all downloaded files.
 
@@ -813,6 +882,7 @@ Security
    :status: approved
    :tags: deploy, security
    :priority: must
+   :release: v1.0
 
    The system SHALL NOT execute arbitrary code from manifests.
 
@@ -821,6 +891,7 @@ Security
    :status: approved
    :tags: deploy, security, installation
    :priority: must
+   :release: v1.0
 
    Installation scripts SHALL require explicit confirmation before destructive operations.
 
@@ -829,6 +900,7 @@ Security
    :status: approved
    :tags: deploy, security, network
    :priority: must
+   :release: v1.0
 
    The system SHALL use HTTPS for all network operations.
 
@@ -837,6 +909,7 @@ Security
    :status: approved
    :tags: deploy, security, filesystem
    :priority: must
+   :release: v1.0
 
    Temporary files SHALL be created with restrictive permissions (user-only).
 
@@ -848,6 +921,7 @@ Scalability
    :status: approved
    :tags: deploy, scalability
    :priority: should
+   :release: v1.0
 
    The system SHALL handle packages up to 50GB in size.
 
@@ -856,6 +930,7 @@ Scalability
    :status: approved
    :tags: deploy, scalability
    :priority: should
+   :release: v1.0
 
    The system SHALL support manifests with up to 100 components.
 
@@ -864,6 +939,7 @@ Scalability
    :status: approved
    :tags: deploy, scalability, performance
    :priority: should
+   :release: v1.0
 
    Parallel collection SHALL scale with available CPU cores.
 
@@ -872,6 +948,7 @@ Scalability
    :status: approved
    :tags: deploy, portability, installation
    :priority: must
+   :release: v1.0
 
    Install scripts SHALL use platform-specific default paths (user: ~/.local on Linux/macOS, %LOCALAPPDATA% on Windows; system: /usr/local on Linux/macOS, C:\Program Files on Windows)
 
@@ -886,6 +963,7 @@ User Interfaces
    :status: approved
    :tags: deploy, external-interface, ui, cli
    :priority: must
+   :release: v1.0
 
    The system SHALL provide a command-line interface with ANSI color support.
 
@@ -894,6 +972,7 @@ User Interfaces
    :status: approved
    :tags: deploy, external-interface, ui, progress
    :priority: must
+   :release: v1.0
 
    The system SHALL display progress bars for long-running operations (using indicatif crate).
 
@@ -902,6 +981,7 @@ User Interfaces
    :status: approved
    :tags: deploy, external-interface, ui, installation
    :priority: must
+   :release: v1.0
 
    The system SHALL provide interactive prompts in generated installation scripts.
 
@@ -913,6 +993,7 @@ Hardware Interfaces
    :status: approved
    :tags: deploy, external-interface, hardware, filesystem
    :priority: must
+   :release: v1.0
 
    The system SHALL use standard filesystem I/O (no special hardware requirements).
 
@@ -921,6 +1002,7 @@ Hardware Interfaces
    :status: approved
    :tags: deploy, external-interface, hardware, network
    :priority: must
+   :release: v1.0
 
    The system SHALL use network interface for downloading components during prep phase.
 
@@ -929,6 +1011,7 @@ Hardware Interfaces
    :status: approved
    :tags: deploy, external-interface, hardware, usb
    :priority: must
+   :release: v1.0
 
    The system SHALL support removable media (USB drives) for package transfer (OS-provided).
 
@@ -940,6 +1023,7 @@ Software Interfaces
    :status: approved
    :tags: deploy, external-interface, software, cargo, rust
    :priority: must
+   :release: v1.0
 
    The system SHALL integrate with ``cargo`` for Rust dependency vendoring.
 
@@ -948,6 +1032,7 @@ Software Interfaces
    :status: approved
    :tags: deploy, external-interface, software, git
    :priority: must
+   :release: v1.0
 
    The system SHALL integrate with ``git`` for cloning external repositories.
 
@@ -956,6 +1041,7 @@ Software Interfaces
    :status: approved
    :tags: deploy, external-interface, software, http
    :priority: must
+   :release: v1.0
 
    The system SHALL use HTTP/HTTPS clients for downloading models and packages.
 
@@ -964,6 +1050,7 @@ Software Interfaces
    :status: approved
    :tags: deploy, external-interface, software, package-manager
    :priority: should
+   :release: v1.0
 
    The system SHALL integrate with system package managers (apt, dnf, pacman) for SystemPackageComponent.
 
@@ -972,6 +1059,7 @@ Software Interfaces
    :status: approved
    :tags: deploy, external-interface, software, airgap-transfer
    :priority: could
+   :release: v1.0
 
    The system SHALL integrate with AirGap Transfer for large package chunking (workflow level, not code level).
 
@@ -983,6 +1071,7 @@ Communications Interfaces
    :status: approved
    :tags: deploy, external-interface, communications, http, network
    :priority: must
+   :release: v1.0
 
    The system SHALL use HTTP/HTTPS for downloading components (preparation phase only).
 
@@ -991,6 +1080,7 @@ Communications Interfaces
    :status: approved
    :tags: deploy, external-interface, communications, air-gap, offline
    :priority: must
+   :release: v1.0
 
    The system SHALL NOT use network communication during installation phase (enforced by air-gap).
 
@@ -1007,6 +1097,7 @@ Component Selection
    :status: approved
    :tags: deploy, components, configuration
    :priority: should
+   :release: v1.0
 
    Components SHALL support ``required`` field to mark components as optional
 
@@ -1015,6 +1106,7 @@ Component Selection
    :status: approved
    :tags: deploy, cli, components
    :priority: should
+   :release: v1.0
 
    The CLI SHALL support ``--include`` flag to select optional components during prep
 
@@ -1026,6 +1118,7 @@ Configuration Generation
    :status: approved
    :tags: deploy, installation, configuration
    :priority: should
+   :release: v1.0
 
    Install scripts SHALL generate configuration files from templates
 
@@ -1034,6 +1127,7 @@ Configuration Generation
    :status: approved
    :tags: deploy, installation, configuration
    :priority: should
+   :release: v1.0
 
    Manifests SHALL support ``[install.config]`` section with ``config_file`` and ``config_template`` fields
 
@@ -1042,6 +1136,7 @@ Configuration Generation
    :status: approved
    :tags: deploy, installation, customization
    :priority: should
+   :release: v1.0
 
    Manifests SHALL support ``[install.steps]`` section for component-specific installation commands
 
@@ -1053,6 +1148,7 @@ Installation Modes
    :status: approved
    :tags: deploy, installation, usability
    :priority: should
+   :release: v1.0
 
    Install scripts SHALL support interactive mode with user prompts
 
@@ -1061,6 +1157,7 @@ Installation Modes
    :status: approved
    :tags: deploy, installation, automation
    :priority: should
+   :release: v1.0
 
    Install scripts SHALL support automatic mode with environment variables (MODE=automatic)
 
@@ -1069,6 +1166,7 @@ Installation Modes
    :status: approved
    :tags: deploy, installation, usability
    :priority: could
+   :release: v1.0
 
    Manifests COULD support ``[install.prompts]`` section for interactive prompt configuration
 
@@ -1080,6 +1178,7 @@ Dependency Management
    :status: approved
    :tags: deploy, dependencies, configuration
    :priority: should
+   :release: v1.0
 
    Manifests SHALL support ``[install.dependencies]`` section to declare required tools
 
@@ -1088,6 +1187,7 @@ Dependency Management
    :status: approved
    :tags: deploy, dependencies, installation
    :priority: must
+   :release: v1.0
 
    Install scripts SHALL verify dependencies before building components
 
@@ -1096,8 +1196,131 @@ Dependency Management
    :status: approved
    :tags: deploy, dependencies, installation
    :priority: should
+   :release: v1.0
 
    Install scripts SHALL verify sufficient disk space before installation
+
+v1.1 — Bill of Materials and Vulnerability Scanning
+----------------------------------------------------
+
+The following requirements are planned for v1.1 and are not in scope for the MVP release.
+
+SBOM Generation
+~~~~~~~~~~~~~~~
+
+.. req:: Generate CycloneDX SBOM
+   :id: FR-DEPLOY-073
+   :status: proposed
+   :tags: deploy, v1.1, sbom, cyclonedx
+   :priority: should
+   :release: v1.1
+
+   The system SHALL generate a CycloneDX JSON SBOM during the ``prep`` phase, output alongside the deployment package as ``sbom.cdx.json``.
+
+.. req:: Parse Cargo.lock for Dependency Graph
+   :id: FR-DEPLOY-074
+   :status: proposed
+   :tags: deploy, v1.1, sbom, dependencies
+   :priority: should
+   :release: v1.1
+
+   The system SHALL parse ``Cargo.lock`` to extract the full transitive dependency graph, including crate names, versions, and dependency relationships.
+
+.. req:: Extract License Information
+   :id: FR-DEPLOY-075
+   :status: proposed
+   :tags: deploy, v1.1, sbom, licensing
+   :priority: should
+   :release: v1.1
+
+   The system SHALL extract license information for each dependency from ``Cargo.toml`` license fields and include it in the SBOM.
+
+.. req:: Include Component Metadata in SBOM
+   :id: FR-DEPLOY-076
+   :status: proposed
+   :tags: deploy, v1.1, sbom, metadata
+   :priority: should
+   :release: v1.1
+
+   The SBOM SHALL include component metadata: package name, version, supplier/source URL, and SHA-256 checksums for all collected components.
+
+.. req:: Include SBOM in Deployment Archive
+   :id: FR-DEPLOY-077
+   :status: proposed
+   :tags: deploy, v1.1, sbom, packaging
+   :priority: should
+   :release: v1.1
+
+   The system SHALL include the generated SBOM in the deployment archive by default.
+
+CBOM Generation
+~~~~~~~~~~~~~~~
+
+.. req:: Detect Cryptographic Dependencies
+   :id: FR-DEPLOY-078
+   :status: proposed
+   :tags: deploy, v1.1, cbom, cryptography
+   :priority: should
+   :release: v1.1
+
+   The system SHALL scan ``Cargo.lock`` for known cryptographic crates (e.g., ring, rustls, aws-lc-rs, openssl-sys, chacha20, aes-gcm, sha2, ed25519-dalek) and record them as CycloneDX CBOM cryptographic asset entries.
+
+.. req:: Document Internal Cryptographic Usage
+   :id: FR-DEPLOY-079
+   :status: proposed
+   :tags: deploy, v1.1, cbom, cryptography
+   :priority: should
+   :release: v1.1
+
+   The CBOM SHALL document hash algorithms used by AirGap Deploy itself (e.g., SHA-256 for checksum verification).
+
+.. req:: Unified SBOM/CBOM Document
+   :id: FR-DEPLOY-080
+   :status: proposed
+   :tags: deploy, v1.1, sbom, cbom, cyclonedx
+   :priority: should
+   :release: v1.1
+
+   The CBOM data SHALL be included in the CycloneDX SBOM document as a single unified file, per the CycloneDX specification.
+
+Vulnerability Scanning
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. req:: Scan Subcommand
+   :id: FR-DEPLOY-081
+   :status: proposed
+   :tags: deploy, v1.1, vulnerability, cli
+   :priority: could
+   :release: v1.1
+
+   The system SHALL provide an ``airgap-deploy scan`` subcommand that accepts a CycloneDX SBOM file as input and reports known vulnerabilities.
+
+.. req:: Offline Vulnerability Database
+   :id: FR-DEPLOY-082
+   :status: proposed
+   :tags: deploy, v1.1, vulnerability, offline
+   :priority: could
+   :release: v1.1
+
+   The scan subcommand SHALL support an offline vulnerability database provided by the user (e.g., a pre-downloaded Grype or Trivy database), requiring no network access.
+
+.. req:: Vulnerability Report Output
+   :id: FR-DEPLOY-083
+   :status: proposed
+   :tags: deploy, v1.1, vulnerability, reporting
+   :priority: could
+   :release: v1.1
+
+   The scan subcommand SHALL generate vulnerability reports in both JSON (machine-readable) and human-readable formats.
+
+.. req:: Severity Threshold Exit Code
+   :id: FR-DEPLOY-084
+   :status: proposed
+   :tags: deploy, v1.1, vulnerability, cli
+   :priority: could
+   :release: v1.1
+
+   The scan subcommand SHALL exit with a non-zero status code when vulnerabilities exceed a configurable severity threshold (e.g., ``--fail-on critical``).
 
 Appendices
 ----------

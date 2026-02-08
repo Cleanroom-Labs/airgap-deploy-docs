@@ -95,7 +95,7 @@ needs_flow_show_links = True
 needs_flow_link_types = ['links', 'tests', 'implements']
 needs_flow_engine = 'graphviz'
 needs_id_regex = '^[A-Z0-9_-]{3,}'
-needs_extra_options = ['priority']
+needs_extra_options = ['priority', 'release']
 
 # -- Intersphinx configuration -----------------------------------------------
 
