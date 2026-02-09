@@ -1,0 +1,2 @@
+[worktree-merge]
+test-command = "make html"
