@@ -25,9 +25,9 @@ Current Design Coverage
 +-------------------------------------+-----------------------------+--------------+--------------------------------------+
 | Installation script generation      | Template system             | |supported|  | Bash/PowerShell                      |
 +-------------------------------------+-----------------------------+--------------+--------------------------------------+
-| Post-install configuration          | Install steps               | |gap|        | No mechanism defined                 |
+| Post-install configuration          | Install steps               | |supported|  | Via ``[install.config]`` section     |
 +-------------------------------------+-----------------------------+--------------+--------------------------------------+
-| Interactive installation            | Install scripts             | |gap|        | Not specified                        |
+| Interactive installation            | Install scripts             | |supported|  | Via ``mode = "interactive"``         |
 +-------------------------------------+-----------------------------+--------------+--------------------------------------+
 | Multiple model selection            | Manifest                    | |unclear|    | Can add multiple components, but UX? |
 +-------------------------------------+-----------------------------+--------------+--------------------------------------+
@@ -264,7 +264,7 @@ Create deployment script:
 
 Deploy via configuration management (Ansible, GPO, etc.)
 
-**Current Plan Support:** ❌ Not supported (no unattended install mode)
+**Current Plan Support:** ⚠️ Partially supported — :need:`FR-DEPLOY-068` provides automatic (unattended) installation mode via ``MODE=automatic``
 
 --------------
 
@@ -465,7 +465,7 @@ Phase Priority Adjustments
 
 Given the gaps, we recommend adjusting the MVP scope:
 
-Current MVP (v0.1.0)
+Current MVP (v1.0)
 ~~~~~~~~~~~~~~~~~~~~~
 
 - ✅ Phase 1: Core infrastructure
@@ -476,7 +476,7 @@ Current MVP (v0.1.0)
 - ❌ Phase 6: Partial tests/docs
 - ❌ Phase 7: Plugin system (skip)
 
-Recommended MVP (v0.1.0)
+Recommended MVP (v1.0)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ✅ Phase 1: Core infrastructure
@@ -707,12 +707,8 @@ Does Current Plan Support Cleanroom Whisper?
 - Generating installation scripts
 - Multi-platform targeting (with CI/CD)
 
-❌ **Gaps:**
+⚠️ **Remaining Gaps:**
 
-- Post-installation configuration generation
-- Optional component selection
-- Dependency verification in install scripts
-- Interactive vs. automated installation modes
 - Cross-platform packaging from single system (deferred)
 
 Recommended Actions
@@ -721,6 +717,6 @@ Recommended Actions
 **Immediate (Phase 1-2):** Add optional component support to manifest schema
 **Phase 4 Enhancement:** Implement config generation, dependency checks, installation modes
 **Documentation:** Create complete Cleanroom Whisper example in ``examples/cleanroom-whisper/``
-**Testing:** Validate on actual air-gapped VMs before v0.1.0 release
+**Testing:** Validate on actual air-gapped VMs before v1.0 release
 
 The foundation is solid, but these enhancements are needed for a smooth Cleanroom Whisper deployment experience.

@@ -151,7 +151,7 @@ Generate template manifests:
    # Rust application template
    airgap-deploy init --type rust-app
 
-   # Python application template
+   # Python application template (future enhancement)
    airgap-deploy init --type python-app
 
 Listing Components
@@ -235,7 +235,7 @@ System Package
    packages = ["libasound2-dev"]  # Debian/Ubuntu
    platforms = ["linux"]
 
-**Note:** SystemPackageComponent deferred to v0.2
+**Note:** SystemPackageComponent optional for MVP, may be deferred
 
 Installation Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -388,7 +388,7 @@ Start Here
 | :doc:`Roadmap <roadmap>`                    | Project status and direction        |
 +---------------------------------------------+-------------------------------------+
 
-.. _Principles: https://cleanroomlabs.dev/docs/meta/principles.html
+.. _Principles: /docs/meta/principles.html
 
 Technical Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -406,13 +406,13 @@ Technical Documentation
 Project Planning
 ~~~~~~~~~~~~~~~~
 
-+--------------------------------------------+---------------------------------+
-| Document                                   | Purpose                         |
-+============================================+=================================+
-| :doc:`Roadmap <roadmap>`                   | 7-phase implementation plan     |
-+--------------------------------------------+---------------------------------+
-| :doc:`Use Case Analysis <use-cases/index>` | Workflow documentation          |
-+--------------------------------------------+---------------------------------+
++--------------------------------------------+--------------------------------------------------+
+| Document                                   | Purpose                                          |
++============================================+==================================================+
+| :doc:`Roadmap <roadmap>`                   | 6-phase implementation plan (Phase 7 deferred)   |
++--------------------------------------------+--------------------------------------------------+
+| :doc:`Use Case Analysis <use-cases/index>` | Workflow documentation                           |
++--------------------------------------------+--------------------------------------------------+
 
 Meta-Architecture
 ~~~~~~~~~~~~~~~~~
@@ -425,8 +425,8 @@ Meta-Architecture
 | Specification Overview_                                         | Project statistics and traceability overview       |
 +-----------------------------------------------------------------+----------------------------------------------------+
 
-.. _Meta-Architecture: https://cleanroomlabs.dev/docs/meta/meta-architecture.html
-.. _Specification Overview: https://cleanroomlabs.dev/docs/meta/specification-overview.html
+.. _Meta-Architecture: /docs/meta/meta-architecture.html
+.. _Specification Overview: /docs/meta/specification-overview.html
 
 Use Cases
 ---------

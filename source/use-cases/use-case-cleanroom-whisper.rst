@@ -64,6 +64,7 @@ Step 1: Prepare AirGapDeploy.toml
    type = "external-binary"
    name = "whisper.cpp"
    repo = "https://github.com/ggerganov/whisper.cpp.git"
+   branch = "master"
    build_instructions = "make"
 
    # Whisper model (base.en)

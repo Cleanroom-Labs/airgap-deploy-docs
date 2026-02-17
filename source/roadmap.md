@@ -326,7 +326,7 @@ Defer all of this until after shipping:
 
 **Enterprise Features:**
 - Digital signatures (GPG, Sigstore)
-- SBOM generation (Software Bill of Materials)
+- SBOM generation (Software Bill of Materials) — see SRS FR-DEPLOY-073 through FR-DEPLOY-084 for v1.1 requirements
 - Compliance reporting
 - License scanning
 

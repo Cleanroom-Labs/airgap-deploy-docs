@@ -111,7 +111,7 @@ AirGap Deploy is a **standalone developer tool** that integrates into existing s
 Product Functions
 ~~~~~~~~~~~~~~~~~
 
-.. _Meta-Architecture: https://cleanroomlabs.dev/docs/meta/meta-architecture.html
+.. _Meta-Architecture: /docs/meta/meta-architecture.html
 
 AirGap Deploy provides the following major functions:
 
@@ -348,7 +348,7 @@ Model File Component
    :priority: must
    :release: v1.0
 
-   The system SHALL download model files from HTTP/HTTPS URLs.
+   The system SHALL download model files from HTTPS URLs.
 
 .. req:: Verify File Checksums
    :id: FR-DEPLOY-016
@@ -425,7 +425,7 @@ System Package Component
 
    The system SHALL configure installation scripts to install system packages.
 
-**Note:** SystemPackageComponent is marked as **optional for MVP** and may be deferred to v0.2.
+**Note:** SystemPackageComponent is marked as **optional for MVP** and may be deferred.
 
 Packaging
 ~~~~~~~~~
@@ -1200,6 +1200,10 @@ Dependency Management
 
    Install scripts SHALL verify sufficient disk space before installation
 
+   .. note::
+
+      This requirement covers disk space verification at install time. For disk space verification during the prep phase, see :need:`FR-DEPLOY-035`.
+
 v1.1 — Bill of Materials and Vulnerability Scanning
 ----------------------------------------------------
 
@@ -1321,6 +1325,71 @@ Vulnerability Scanning
    :release: v1.1
 
    The scan subcommand SHALL exit with a non-zero status code when vulnerabilities exceed a configurable severity threshold (e.g., ``--fail-on critical``).
+
+v1.0 — Additional Component and Configuration Support
+------------------------------------------------------
+
+The following requirements were identified during use case analysis (Ollama deployment) and are included in the v1.0 release.
+
+Config File Component
+~~~~~~~~~~~~~~~~~~~~~
+
+.. req:: Config File Component Type
+   :id: FR-DEPLOY-085
+   :status: approved
+   :tags: deploy, component, config-file
+   :priority: should
+   :release: v1.0
+
+   The system SHALL support a ``config-file`` component type for deploying configuration files (e.g., systemd units, config templates) with inline ``content`` and ``install_path`` fields.
+
+GitHub Release Source
+~~~~~~~~~~~~~~~~~~~~~
+
+.. req:: GitHub Release Source Type
+   :id: FR-DEPLOY-086
+   :status: approved
+   :tags: deploy, external-binary, github-release
+   :priority: should
+   :release: v1.0
+
+   The system SHALL support a ``github-release`` source type for external-binary components, specifying ``repo`` (owner/name), ``tag``, and ``asset_pattern`` (glob pattern for selecting platform-specific release assets).
+
+Extended Install Section
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. req:: Extended Install Section Fields
+   :id: FR-DEPLOY-087
+   :status: approved
+   :tags: deploy, installation, configuration
+   :priority: should
+   :release: v1.0
+
+   The system SHALL support ``[install]`` section fields: ``prefix`` (installation root directory), ``user`` (system user for service), ``group`` (system group for service).
+
+Configuration Management Output
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. req:: Configuration Management Output Format
+   :id: FR-DEPLOY-088
+   :status: approved
+   :tags: deploy, cli, configuration-management
+   :priority: could
+   :release: v1.0
+
+   The system SHALL support a ``--format`` flag on the ``prep`` command to generate configuration management output (e.g., ``--format ansible`` for Ansible playbooks).
+
+Nested Source Fields
+~~~~~~~~~~~~~~~~~~~~
+
+.. req:: Nested Source Field Support
+   :id: FR-DEPLOY-089
+   :status: approved
+   :tags: deploy, manifest, configuration
+   :priority: should
+   :release: v1.0
+
+   Component configuration SHALL support nested ``source.*`` fields (e.g., ``source.type``, ``source.url``, ``source.checksum``) as an alternative to flat field layout for components with polymorphic source types.
 
 Appendices
 ----------
