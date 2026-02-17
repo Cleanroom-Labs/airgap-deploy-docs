@@ -63,11 +63,11 @@ Test Types
 Test Type       Purpose                  Coverage
 =============== ======================== ================
 **Functional**  Verify requirements      All FR from SRS
-**Performance** Verify speed/scalability NFR-1.x from SRS
-**Reliability** Verify error handling    NFR-2.x from SRS
-**Usability**   Verify UX                NFR-3.x from SRS
-**Portability** Verify platforms         NFR-5.x from SRS
-**Security**    Verify checksums         NFR-6.x from SRS
+**Performance** Verify speed/scalability NFR-DEPLOY-001 to NFR-DEPLOY-004
+**Reliability** Verify error handling    NFR-DEPLOY-005 to NFR-DEPLOY-008
+**Usability**   Verify UX                NFR-DEPLOY-009 to NFR-DEPLOY-012
+**Portability** Verify platforms         NFR-DEPLOY-017 to NFR-DEPLOY-020
+**Security**    Verify checksums         NFR-DEPLOY-021 to NFR-DEPLOY-025
 =============== ======================== ================
 
 Test Environment
@@ -87,7 +87,7 @@ Test Environment
 - Windows 10, 11
 - Rust stable, beta
 
-**Air-Gapped Environment:**
+**Air-gapped environment:**
 
 - VirtualBox/VMware VMs with no network
 - Test actual air-gap deployment
@@ -96,18 +96,18 @@ Test Environment
 Test Cases
 ----------
 
-Manifest Parsing (FR-1.x)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Manifest Parsing (FR-DEPLOY-001 to FR-DEPLOY-005)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Valid Manifest Parsing
    :id: TC-MAN-001
    :status: approved
    :tags: deploy, manifest, parsing
-   :tests: FR-DEPLOY-001
+   :tests: FR-DEPLOY-001, FR-DEPLOY-003
    :priority: high
    :release: v1.0
 
-   Verify valid AirGapDeploy.toml parses successfully
+   Verify valid AirGapDeploy.toml parses successfully with all supported sections
 
 .. test:: Invalid Manifest - Missing Required Field
    :id: TC-MAN-002
@@ -149,8 +149,8 @@ Manifest Parsing (FR-1.x)
 
    Verify warning for future schema version
 
-RustAppComponent (FR-2.1 to FR-2.5)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RustAppComponent (FR-DEPLOY-006 to FR-DEPLOY-010)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Rust App with Vendoring
    :id: TC-RUST-001
@@ -192,8 +192,8 @@ RustAppComponent (FR-2.1 to FR-2.5)
 
    Verify error handling for cargo vendor failures
 
-ExternalBinaryComponent (FR-2.6 to FR-2.9)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ExternalBinaryComponent (FR-DEPLOY-011 to FR-DEPLOY-014)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Git Repository Cloning
    :id: TC-GIT-001
@@ -235,8 +235,8 @@ ExternalBinaryComponent (FR-2.6 to FR-2.9)
 
    Verify retry logic for network failures
 
-ModelFileComponent (FR-2.10 to FR-2.14)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ModelFileComponent (FR-DEPLOY-015 to FR-DEPLOY-019)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Model File Download
    :id: TC-MODEL-001
@@ -298,8 +298,8 @@ ModelFileComponent (FR-2.10 to FR-2.14)
 
    Verify cached file reuse
 
-Packaging (FR-3.1 to FR-3.6)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Packaging (FR-DEPLOY-024 to FR-DEPLOY-029)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Create tar.gz Package
    :id: TC-PKG-001
@@ -351,8 +351,8 @@ Packaging (FR-3.1 to FR-3.6)
 
    Verify large package creation with stable memory usage
 
-Install Script Generation (FR-4.1 to FR-4.7)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Script Generation (FR-DEPLOY-030 to FR-DEPLOY-036)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Bash Script Generation
    :id: TC-INSTALL-001
@@ -414,8 +414,8 @@ Install Script Generation (FR-4.1 to FR-4.7)
 
    Verify clear error message for missing dependencies
 
-CLI Interface (FR-5.1 to FR-5.5)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CLI Interface (FR-DEPLOY-037 to FR-DEPLOY-041)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Prep Command - Default Manifest
    :id: TC-CLI-001
@@ -487,8 +487,8 @@ CLI Interface (FR-5.1 to FR-5.5)
 
    Verify --help flag displays usage information
 
-Error Handling (FR-7.1 to FR-7.4)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error Handling (FR-DEPLOY-045 to FR-DEPLOY-048)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. test:: Network Error with Retry
    :id: TC-ERR-001
@@ -1298,9 +1298,9 @@ Performance Metrics
 ========================= ======== =========
 Metric                    Target   Test Case
 ========================= ======== =========
-**Package prep time**     < 5 min  TC-110
-**Large download memory** < 100 MB TC-111
-**Install time**          < 20 min TC-113
+**Package prep time**     < 5 min  TC-PERF-001
+**Large download memory** < 100 MB TC-PERF-002
+**Install time**          < 20 min TC-PERF-004
 ========================= ======== =========
 
 Test Schedule
@@ -1309,38 +1309,40 @@ Test Schedule
 Phase 1: Core Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- TC-001 to TC-005 (Manifest parsing)
+- TC-MAN-001 to TC-MAN-005 (Manifest parsing)
 - Unit tests for core types
 
 Phase 2: Built-in Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- TC-010 to TC-013 (RustApp)
-- TC-020 to TC-023 (ExternalBinary)
-- TC-030 to TC-035 (ModelFile)
+- TC-RUST-001 to TC-RUST-004 (RustApp)
+- TC-GIT-001 to TC-GIT-004 (ExternalBinary)
+- TC-MODEL-001 to TC-MODEL-006 (ModelFile)
 
 Phase 3: Packaging
 ~~~~~~~~~~~~~~~~~~
 
-- TC-040 to TC-044 (Packaging)
+- TC-PKG-001 to TC-PKG-005 (Packaging)
 
 Phase 4: Install Scripts
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- TC-050 to TC-055 (Install scripts)
+- TC-INSTALL-001 to TC-INSTALL-006 (Install scripts)
+- TC-DEPLOY-INST-001 to TC-DEPLOY-INST-012 (Enhanced installation features)
 
 Phase 5: CLI
 ~~~~~~~~~~~~
 
-- TC-060 to TC-066 (CLI interface)
+- TC-CLI-001 to TC-CLI-007 (CLI interface)
+- TC-DEPLOY-CLI-001 to TC-DEPLOY-CLI-003 (CLI features)
 
 Phase 6: Integration & System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- TC-070 to TC-073 (Error handling)
-- TC-100 to TC-102 (End-to-end workflows)
-- TC-110 to TC-113 (Performance)
-- TC-120 to TC-123 (Security)
+- TC-ERR-001 to TC-ERR-004 (Error handling)
+- TC-E2E-001 to TC-E2E-003 (End-to-end workflows)
+- TC-PERF-001 to TC-PERF-004 (Performance)
+- TC-DEPLOY-SEC-001 to TC-DEPLOY-SEC-004 (Security)
 
 Defect Management
 ------------------
@@ -1419,6 +1421,27 @@ Test plan will be approved when:
 - ✅ Ready to begin testing during implementation
 
 **Status:** ✅ Test Plan Complete - Ready for implementation
+
+Future Test Scope
+-----------------
+
+The following v1.1 requirements (FR-DEPLOY-073 through FR-DEPLOY-084) will need test cases when SBOM generation and vulnerability scanning are implemented:
+
+- SBOM generation tests (CycloneDX format validation, dependency graph extraction, license information)
+- CBOM generation tests (cryptographic crate detection, internal crypto usage documentation)
+- Vulnerability scanning tests (scan subcommand, offline database, report output, severity threshold)
+
+These test cases will be added to a dedicated "v1.1 SBOM/CBOM/Vulnerability" test section.
+
+.. test:: Configurable Compression Levels
+   :id: TC-PKG-006
+   :status: approved
+   :tags: deploy, packaging, compression
+   :tests: FR-DEPLOY-029
+   :priority: medium
+   :release: v1.0
+
+   Verify package creation supports configurable compression levels and the output size varies accordingly
 
 Requirements Traceability
 -------------------------

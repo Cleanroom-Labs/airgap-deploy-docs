@@ -19,7 +19,7 @@ CLI Module (``cli``)
 **Key Components:**
 
 - ``PrepCommand`` - Main prep command handler
-- ``Args`` - Argument parser using clap
+- ``Cli`` - Argument parser using clap
 - ``TargetPlatform`` - Platform specification
 
 Manifest Module (``manifest``)
@@ -33,10 +33,10 @@ Manifest Module (``manifest``)
 - ``Component`` - Component definitions
 - ``ManifestParser`` - TOML parsing and validation
 
-Cargo Module (``cargo``)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Rust App Module (``rust_app``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Purpose:** Rust project analysis and dependency management
+**Purpose:** Rust project analysis and dependency management (implements ``RustAppComponent``)
 
 **Key Components:**
 
@@ -52,8 +52,9 @@ Component Module (``component``)
 **Key Components:**
 
 - ``RustAppComponent`` - Rust application handler
-- ``ExternalBinaryComponent`` - External binary downloader
+- ``ExternalBinaryComponent`` - External binary downloader (including ``GithubReleaseSource``)
 - ``ModelFileComponent`` - Model file manager
+- ``ConfigFileComponent`` - Configuration file deployer
 - ``SystemPackageComponent`` - System package bundler
 
 Package Module (``package``)

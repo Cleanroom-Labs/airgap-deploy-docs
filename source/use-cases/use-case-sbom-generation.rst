@@ -56,7 +56,7 @@ The deployment manifest is a standard ``AirGapDeploy.toml`` file. No additional 
    [[components]]
    type = "rust-app"
    name = "secure-app"
-   path = "."
+   source = "."
 
 Generate Deployment Package with SBOM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

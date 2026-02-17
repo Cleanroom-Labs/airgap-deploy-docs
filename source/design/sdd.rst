@@ -123,7 +123,8 @@ Component Descriptions
 +------------------------------+------------------------------------------+------------------------------------------------------+
 | Component                    | Responsibility                           | Key Types                                            |
 +==============================+==========================================+======================================================+
-| **CLI Parser**               | Parse command-line arguments             | ``Cli``, ``PrepCommand``, ``ValidateCommand``        |
+| **CLI Parser**               | Parse command-line arguments             | ``Cli``, ``PrepCommand``, ``ValidateCommand``,       |
+|                              |                                          | ``--format`` flag (e.g., ``--format ansible``)       |
 +------------------------------+------------------------------------------+------------------------------------------------------+
 | **Manifest Parser**          | Parse and validate TOML manifests        | ``Manifest``, ``PackageConfig``, ``ComponentConfig`` |
 +------------------------------+------------------------------------------+------------------------------------------------------+
@@ -131,7 +132,8 @@ Component Descriptions
 +------------------------------+------------------------------------------+------------------------------------------------------+
 | **Collector**                | Orchestrate component collection         | ``Collector``, ``CollectionResult``                  |
 +------------------------------+------------------------------------------+------------------------------------------------------+
-| **Built-in Components**      | Implement specific component types       | ``RustAppComponent``, ``ModelFileComponent``, etc.   |
+| **Built-in Components**      | Implement specific component types       | ``RustAppComponent``, ``ModelFileComponent``,        |
+|                              |                                          | ``ConfigFileComponent``, etc.                        |
 +------------------------------+------------------------------------------+------------------------------------------------------+
 | **Packager**                 | Create deployment archives               | ``Packager``, ``PackageLayout``                      |
 +------------------------------+------------------------------------------+------------------------------------------------------+
@@ -192,6 +194,9 @@ Manifest Structure
        pub mode: InstallMode,
        pub config: Option<ConfigTemplate>,
        pub steps: Option<HashMap<String, Vec<String>>>,
+       pub prefix: Option<PathBuf>,   // Installation root directory
+       pub user: Option<String>,      // System user for service
+       pub group: Option<String>,     // System group for service
    }
 
    pub enum InstallMethod {
@@ -426,6 +431,77 @@ Copy to staging directory
        },
    ]
 
+ConfigFileComponent
+^^^^^^^^^^^^^^^^^^^
+
+**Purpose:** Deploy configuration files (e.g., systemd units, config templates) with inline content
+
+**Configuration:**
+
+.. code:: toml
+
+   [[components]]
+   type = "config-file"
+   name = "ollama.service"
+   content = """
+   [Unit]
+   Description=Ollama LLM Server
+   After=network.target
+
+   [Service]
+   Type=simple
+   User=ollama
+   ExecStart=/opt/ollama/bin/ollama serve
+
+   [Install]
+   WantedBy=multi-user.target
+   """
+   install_path = "/etc/systemd/system/ollama.service"
+
+**Collection Algorithm:**
+
+1. Write inline ``content`` to a file in the staging directory
+2. Record ``install_path`` for the install script
+
+**Install Steps:**
+
+.. code:: rust
+
+   vec![
+       InstallStep::CopyFile {
+           source: PathBuf::from("config-files/ollama.service"),
+           destination: PathBuf::from("/etc/systemd/system/ollama.service"),
+           permissions: Some(0o644),
+       },
+   ]
+
+GithubReleaseSource (ExternalBinaryComponent Variant)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Purpose:** Download prebuilt binaries from GitHub Releases (no build step needed)
+
+**Configuration:**
+
+.. code:: toml
+
+   [[components]]
+   type = "external-binary"
+   name = "ollama"
+   source.type = "github-release"
+   source.repo = "ollama/ollama"
+   source.tag = "v0.15.0"
+   source.asset_pattern = "ollama-linux-amd64"
+   install_path = "bin/ollama"
+
+**Collection Algorithm:**
+
+1. Resolve GitHub Releases API URL: ``https://github.com/{repo}/releases/download/{tag}/{asset_pattern}``
+2. Download matching release asset with progress bar
+3. Verify checksum if provided
+4. Copy binary to staging directory
+
+**Note:** Unlike the standard ``ExternalBinaryComponent`` which clones a Git repository and builds from source, ``GithubReleaseSource`` downloads a prebuilt binary directly. No ``build_instructions`` field is needed.
+
 Packaging Algorithm
 ~~~~~~~~~~~~~~~~~~~
 
@@ -554,7 +630,7 @@ Component Plugin Interface
        }
    }
 
-**Note:** Plugin system deferred to post-v1.0 (see :doc:`Roadmap <../roadmap>` Phase 7)
+**Note:** Plugin system deferred to v1.1+ (see :doc:`Roadmap <../roadmap>` Phase 7)
 
 Design Decisions and Rationales
 -------------------------------
